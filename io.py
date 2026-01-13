@@ -19,7 +19,7 @@ class IOModule():
         GPIO.output(pin, val)
         print(f"Setting pin {pin} to {val}")
 
-if __name__ == "main":
+if __name__ == "__main__":
     io = IOModule()
     io.setup_pins([12, 11], GPIO.OUT)
     io.setup_pins([38, 40], GPIO.IN)
