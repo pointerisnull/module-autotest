@@ -8,6 +8,7 @@ class IOModule():
     
     # io_mode : input by default 
     def setup_pins(pins, io_mode=GPIO.IN):
+        print("HERE!!")
         for i in len(pins):
             GPIO.setup(pins[i], io_mode)
 
