@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-class IOModule():
+class IOModule:
     # mode : "BCM" (GPIO #) or "BOARD" (Physical Pin #)
     def __init__(self, mode=GPIO.BOARD):
         self.mode = mode
