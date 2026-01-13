@@ -8,7 +8,7 @@ class IOModule:
         GPIO.setmode(self.mode)
     
     # io_mode : input by default 
-    def setup_pins(pin, io_mode=GPIO.IN):
+    def setup_pins(self, pin, io_mode=GPIO.IN):
         GPIO.setup(pin, io_mode)
 
     def read_pin(self, pin):
