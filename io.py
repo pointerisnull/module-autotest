@@ -21,5 +21,6 @@ if __name__ == "main":
     io = IOModule()
     io.setup_pins([15, 16], GPIO.OUT)
     io.setup_pins([28, 29], GPIO.IN)
-    val = io.read_pin(29)
-    print(val)
+    #val = io.read_pin(29)
+    #print(val)
+    io.set_pin(15, GPIO.LOW)
