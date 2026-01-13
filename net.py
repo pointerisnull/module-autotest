@@ -1,6 +1,7 @@
 
 
 class Network():
+    
     def tcp_connect():
         pass
 

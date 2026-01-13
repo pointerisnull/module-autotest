@@ -16,15 +16,19 @@ class IOModule:
 
     def set_pin(self, pin, val):
         GPIO.output(pin, val)
-        print(f"Setting pin {pin} to {val}")
+        #print(f"Setting pin {pin} to {val}")
 
 if __name__ == "__main__":
+    di_1 = 12
+    do_1 = 40
+
     io = IOModule()
-    io.setup_pins(12, GPIO.OUT)
-    io.setup_pins(40, GPIO.IN)
-    
+    io.setup_pins(di_1, GPIO.OUT)
+    io.setup_pins(do_1, GPIO.IN)
+
     while(1):
-        io.set_pin(12, GPIO.HIGH)
+        io.set_pin(di_1, GPIO.HIGH)
         time.sleep(1)
-        io.set_pin(12, GPIO.LOW)
+        io.set_pin(di_1, GPIO.LOW)
         time.sleep(1)
+        print(f"Pin {do_1}: {io.read_pin(do_1)}")
