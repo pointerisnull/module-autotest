@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import time
 
 class IOModule:
     # mode : "BCM" (GPIO #) or "BOARD" (Physical Pin #)
@@ -21,6 +22,9 @@ if __name__ == "__main__":
     io = IOModule()
     io.setup_pins(12, GPIO.OUT)
     io.setup_pins(40, GPIO.IN)
-    #val = io.read_pin(29)
-    #print(val)
-    io.set_pin(12, GPIO.HIGH)
+    
+    while(1):
+        io.set_pin(12, GPIO.HIGH)
+        time.sleep(1)
+        io.set_pin(12, GPIO.LOW)
+        time.sleep(1)
