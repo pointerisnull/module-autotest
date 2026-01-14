@@ -60,8 +60,11 @@ class RaspberryPi:
 
 class IOModule:
     # mode : "BCM" (GPIO #) or "BOARD" (Physical Pin #)
-    def __init__(self, mode=GPIO.BOARD):
-        self.mode = mode
+    def __init__(self, mode='BOARD'):
+        if mode == 'BOARD':
+            self.mode = GPIO.BOARD
+        else:
+            self.mode = GPIO.BCM
         GPIO.setmode(self.mode)
     
     # io_mode : input by default 
