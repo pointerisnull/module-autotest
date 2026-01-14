@@ -2,7 +2,7 @@ from core.socketHandler import SocketHandler
 from core.tagHandler import tagHandler
 from objects.Tag import Tag
 
-IP = '10.80.14.215' #change based on host
+IP = '10.80.14.101' #change based on host
 
 def main():
     socket_handler = SocketHandler(IP, 502)
