@@ -24,14 +24,14 @@ class tagHandler:
                     __line_split = line.split('=')
                     __target_data = (__line_split[1]).replace(' ','')
                 elif 'tag not found' in line:
-                    logging.log('error', f'Unable to find tag "{tag.get_tag_name()}" on device')
-                    logging.log('info', "Ensure that device is configured with the proper tags CHANGE THIS LATER")
+                    logging.error(f'Unable to find tag "{tag.get_tag_name()}" on device')
+                    logging.info("Ensure that device is configured with the proper tags CHANGE THIS LATER")
             if __target_data.isdigit():
                 return int(__target_data)
             else:
                 return __target_data
         except Exception as e:
-            logging.log('error', f'Unexpected exception encountered while trying to get "{tag.get_tag_name()}" tag value from device, {e}')
+            logging.error(f'Unexpected exception encountered while trying to get "{tag.get_tag_name()}" tag value from device, {e}')
   
     def get_raw_tag_data(self, tag: Tag):
         __attempts = DEFAULT_ATTEMPTS
@@ -42,17 +42,17 @@ class tagHandler:
                 return __response
 
             except TimeoutError as te:
-                logging.log('error', f'TimeoutError while attempting to get raw "{tag.get_tag_name()}" tag data from device, {te}')
+                logging.error(f'TimeoutError while attempting to get raw "{tag.get_tag_name()}" tag data from device, {te}')
                 time.sleep(5)
                 __attempts -= 1
                 self.__socket_handler.reset_socket()
-                logging.log('info', f'Reattempting to get device response, {__attempts}/10 attempts remaining')
+                logging.info(f'Reattempting to get device response, {__attempts}/10 attempts remaining')
 
                 continue
         
-        logging.log('crtitical', "Failed to get response from device")
-        logging.log('info', "Verify device connection and config")
-        logging.log('info', 'Exiting.')
+        logging.critical("Failed to get response from device")
+        logging.info("Verify device connection and config")
+        logging.info('Exiting.')
         sys.exit()
 
     def __format_tag_command(self, tag: Tag, action: str):
@@ -65,7 +65,7 @@ class tagHandler:
         try:
             self.__socket_handler.get_socket().sendall(formatted_command.encode())
         except Exception as e:
-            logging.log('error', f'Command faield, {e}')
+            logging.error(f'Command failed, {e}')
 
     def __get_device_response(self, tag: Tag):
         __buffer = ''

@@ -1,15 +1,14 @@
 from core.socketHandler import SocketHandler
+from core.tagHandler import tagHandler
+from objects.Tag import Tag
 
 IP = '10.80.14.215' #change based on host
 
 def main():
-    socket_handler = SocketHandler(IP, 789)  
+    tag_handler = tagHandler()
+    tag = Tag("DI_1", 0)
 
-    socket_handler.open_socket()
-
-    socket_handler.close_socket()
-
-
+    tag_handler.get_tag_value(tag)
 
 if (__name__ == "__main__"):
     main()
