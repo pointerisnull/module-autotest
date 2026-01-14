@@ -8,7 +8,7 @@ PORT = 23 # TCP Port
 def main():
     socket_handler = SocketHandler(IP, PORT)
     tag_handler = tagHandler(socket_handler)
-    tag = Tag("DI_1", 0)
+    tag = Tag("di_1", 0)
 
     print(tag_handler.get_tag_value(tag))
 
