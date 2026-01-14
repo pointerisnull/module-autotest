@@ -78,3 +78,5 @@ class tagHandler:
             else:
                 __buffer =''
         return __response
+    
+   

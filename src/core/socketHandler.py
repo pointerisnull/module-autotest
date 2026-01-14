@@ -21,6 +21,7 @@ class SocketHandler:
         __attempts = 0 
 
         while __attempts < max_attempts:
+            time.sleep(2)
             try:
                 self.__socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 self.__socket.settimeout(__TIMEOUT)
