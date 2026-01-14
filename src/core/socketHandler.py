@@ -55,13 +55,17 @@ class SocketHandler:
             self.close_socket() 
             self.open_socket()
 
-    def flush_socket(self):
+    def flush_socket(self) -> None:
         sock = self.get_socket()
         sock.setblocking(False)
 
-        while True:
-            data = sock.recv(2048)
-            if not data:
-                break
+        try: 
 
-        sock.setblocking(True)
+            while True:
+                data = sock.recv(2048)
+                if not data:
+                    break
+        except BlockingIOError:
+            pass
+        finally:
+            sock.setblocking(True)
