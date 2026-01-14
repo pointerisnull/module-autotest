@@ -32,8 +32,7 @@ class tagHandler:
                 return __target_data
         except Exception as e:
             logging.log('error', f'Unexpected exception encountered while trying to get "{tag.get_tag_name()}" tag value from device, {e}')
-
-    
+  
     def get_raw_tag_data(self, tag: Tag):
         __attempts = DEFAULT_ATTEMPTS
         while __attempts > 0:
