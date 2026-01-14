@@ -49,7 +49,7 @@ class RaspberryPi:
         return [int(bit) for bit in f'{addr:03b}']
 
     # via demux common pin
-    def set_digital_input(self, addr, val=GPIO.HIGH):
+    def set_digital_input(self, addr=1, val=GPIO.HIGH):
         bin_addr = self.get_binary_address(addr)
         input_pin = self.pins['di_x']
 
@@ -60,7 +60,7 @@ class RaspberryPi:
         self.io.set_pin(input_pin, val)
 
     # via mux common pin
-    def get_digital_output(self, addr):
+    def get_digital_output(self, addr=1):
         bin_addr = self.get_binary_address(addr)
         output_pin = self.pins['do_x']
         
@@ -89,7 +89,6 @@ class IOModule:
 
     def set_pin(self, pin, val):
         GPIO.output(pin, val)
-        #print(f"Setting pin {pin} to {val}")
 
     def shutdown(self):
         GPIO.cleanup()
