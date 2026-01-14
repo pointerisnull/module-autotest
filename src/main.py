@@ -9,7 +9,7 @@ PORT = 789 # TCP Port
 def main():
     socket_handler = SocketHandler(IP, PORT)
     tag_handler = tagHandler(socket_handler)
-    tag = Tag("Tag1", 0)
+    tag = Tag("di_1", 0)
     '''
     try:
         socket_handler.open_socket()
