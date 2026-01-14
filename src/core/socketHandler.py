@@ -2,10 +2,7 @@ import socket
 import time 
 import logging
 import sys
-
-
-HOST = "127.0.0.1"
-PORT = 687
+from logging import Logger
 
 class SocketHandler:
     def __init__(self, remote_host_address: str, debug_port: int):
@@ -23,8 +20,8 @@ class SocketHandler:
         __TIMEOUT = 2
         __attempts = 0 
 
-
         while __attempts < max_attempts:
+            time.sleep(2)
             try:
                 self.__socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 self.__socket.settimeout(__TIMEOUT)
@@ -32,41 +29,48 @@ class SocketHandler:
                 break
             
             except TimeoutError as e:
-                logging.Logger.log('error',f'TimeoutError while attempting to open socket: {e}')
+                logging.error(f'TimeoutError while attempting to open socket: {e}')
             except ConnectionRefusedError as e:
-                logging.Logger.log('error',f'ConnectionRefusedError while attempting to open socket: {e}')
+                logging.error(f'ConnectionRefusedError while attempting to open socket: {e}')
 
             __attempts += 1
             continue
         
         if __attempts >= max_attempts:
-            logging.log('critical', "Unable to communicate with device")
+            logging.critical("Unable to communicate with device")
             raise Exception
         
-        # best case: connection established
-        logging.log('info', f'Connection established with {self.__remote_host_address}')
+        logging.info(f'Connection established with {self.__remote_host_address}')
 
     def close_socket(self):
         try:
             self.__socket.close()
-
         except Exception as e:
-            logging.log('error', f'Error occurred while attempting to close socket: {e}')
-        
-        logging.log('info', f'Socket successfully closed')
-        return
+            logging.error(f'Error occurred while attempting to close socket: {e}')
+        finally:
+            self.__socket = None
+            logging.info(f'Socket successfully closed')
     
     def reset_socket(self):
             self.close_socket() 
             self.open_socket()
 
-    def flush_socket(self):
+    def flush_socket(self) -> None:
         sock = self.get_socket()
+
+        if sock is None:
+            logging.warning("Socket not open. Opening to be flushed...")
+            self.open_socket()
+            sock = self.get_socket()
+            
         sock.setblocking(False)
 
-        while True:
-            data = sock.recv(2048)
-            if not data:
-                break
-
-        sock.setblocking(True)
+        try: 
+            while True:
+                data = sock.recv(2048)
+                if not data:
+                    break
+        except BlockingIOError:
+            pass
+        finally:
+            sock.setblocking(True)
