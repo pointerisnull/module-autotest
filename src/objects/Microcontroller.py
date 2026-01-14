@@ -22,14 +22,14 @@ class RaspberryPi:
         self.io.setup_pins(self.pins['do_c'], GPIO.OUT)
     
     def get_pinout(self):
-       # read pinout.csv
-       file_path = PINOUT_SETTINGS_PATH
-       if not os.path.isfile(file_path):
-        raise FileNotFoundError(f"File not found: {file_path}")
+        # read pinout.csv
+        file_path = PINOUT_SETTINGS_PATH
+        if not os.path.isfile(file_path):
+           raise FileNotFoundError(f"File not found: {file_path}")
 
-       config_dict = {}
+        config_dict = {}
     
-       with open(file_path, mode='r', encoding='utf-8') as csvfile:
+        with open(file_path, mode='r', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
         
             for row in reader:
@@ -43,7 +43,7 @@ class RaspberryPi:
                     # Fallback to string if it's not an integer
                     pin_value = pin_raw
                 config_dict[function_name] = pin_value
-       return config_dict
+        return config_dict
 
     def get_binary_address(self, addr):
         return [int(bit) for bit in f'{addr:03b}']

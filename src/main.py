@@ -1,16 +1,22 @@
 from core.socketHandler import SocketHandler
 from core.tagHandler import tagHandler
 from objects.Tag import Tag
+import sys
 
-IP = '10.80.14.215' #change based on host
-PORT = 23
+IP = '10.80.14.101' #change based on host
+PORT = 23 # TCP Port
 
 def main():
     socket_handler = SocketHandler(IP, PORT)
-    socket_handler.open_socket()
-
     tag_handler = tagHandler(socket_handler)
-    tag = Tag("DI_1", 0)
+    tag = Tag("di_1", 0)
+    '''
+    try:
+        socket_handler.open_socket()
+    except Exception as e:
+        print(e)
+        sys.exit()
+    '''
 
     print(tag_handler.get_tag_value(tag))
 
