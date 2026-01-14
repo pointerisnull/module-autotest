@@ -4,7 +4,7 @@ from objects.Tag import Tag
 import sys
 
 IP = '10.80.14.101' #change based on host
-PORT = 789 # TCP Port
+PORT = 23 # TCP Port
 
 def main():
     socket_handler = SocketHandler(IP, PORT)
