@@ -45,12 +45,11 @@ class SocketHandler:
     def close_socket(self):
         try:
             self.__socket.close()
-
         except Exception as e:
             logging.error(f'Error occurred while attempting to close socket: {e}')
-        
-        logging.info(f'Socket successfully closed')
-        return
+        finally:
+            self.__socket = None
+            logging.info(f'Socket successfully closed')
     
     def reset_socket(self):
             self.close_socket() 
@@ -58,10 +57,13 @@ class SocketHandler:
 
     def flush_socket(self) -> None:
         sock = self.get_socket()
+
+        if sock is None:
+            logging.error("Cannot flush: socket is not initialized.")
+            
         sock.setblocking(False)
 
         try: 
-
             while True:
                 data = sock.recv(2048)
                 if not data:
