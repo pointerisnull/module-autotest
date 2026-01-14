@@ -1,10 +1,12 @@
 from socketHandler import SocketHandler
+from tagHandler import TagHandler
 
 class FlexEdge:
     def __init__(self, ip_addr: str, port: int):
         self.address = ip_addr
         self.port = port
         self.socket_handler = SocketHandler(self.address, self.port)
+        self.tag_handler = TagHandler(self.socket_handler)
     
     def connect(self):
         self.socket_hadler.open_TCP_socket()

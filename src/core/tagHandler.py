@@ -5,4 +5,5 @@ import logging
 from core.socketHandler import SocketHandler
 from objects.Tag import Tag
 
-
+class TagHandler():
+    pass
