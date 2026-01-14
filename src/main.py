@@ -3,9 +3,10 @@ from core.tagHandler import tagHandler
 from objects.Tag import Tag
 
 IP = '10.80.14.101' #change based on host
+PORT = 23 # TCP Port
 
 def main():
-    socket_handler = SocketHandler(IP, 502)
+    socket_handler = SocketHandler(IP, PORT)
     tag_handler = tagHandler(socket_handler)
     tag = Tag("DI_1", 0)
 
