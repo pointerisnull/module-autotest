@@ -12,7 +12,7 @@ def main():
     tag = Tag("di_1", 0)
 
     try:
-        socket_handler.open_TCP_socket()
+        socket_handler.open_socket()
     except Exception as e:
         print(e)
         sys.exit()
