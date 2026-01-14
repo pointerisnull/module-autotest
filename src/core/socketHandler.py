@@ -3,10 +3,6 @@ import time
 import logging
 import sys
 
-
-HOST = "127.0.0.1"
-PORT = 687
-
 class SocketHandler:
     def __init__(self, remote_host_address: str, debug_port: int):
         self.__remote_host_address = str(remote_host_address)
@@ -22,7 +18,6 @@ class SocketHandler:
     def open_socket(self, max_attempts = 5):
         __TIMEOUT = 2
         __attempts = 0 
-
 
         while __attempts < max_attempts:
             try:
@@ -43,7 +38,6 @@ class SocketHandler:
             logging.log('critical', "Unable to communicate with device")
             raise Exception
         
-        # best case: connection established
         logging.log('info', f'Connection established with {self.__remote_host_address}')
 
     def close_socket(self):
