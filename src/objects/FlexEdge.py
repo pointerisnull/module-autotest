@@ -7,10 +7,13 @@ class FlexEdge:
         self.socket_handler = SocketHandler(self.address, self.port)
     
     def connect(self):
-        pass
+        self.socket_hadler.open_TCP_socket()
 
+    def reconnect(self):
+        self.socket_hadler.reset_TCP_socket()
+    
     def disconnect(self):
-        pass
+        self.socket_hadler.close_TCP_socket()
 
     def upload_database(self, db_path: str):
         pass
