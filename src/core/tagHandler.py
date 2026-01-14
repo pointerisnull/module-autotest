@@ -17,7 +17,7 @@ class tagHandler:
     def get_tag_value(self, tag: Tag) -> str | int:
         try:
             __target_data = None
-            __response = self.__get_raw_tag_data(tag, logging)
+            __response = self.__get_raw_tag_data(tag)
             __response_lines = __response.split('\r\n')
             for line in __response_lines:
                 if '=' in line:
@@ -33,7 +33,7 @@ class tagHandler:
         except Exception as e:
             logging.error(f'Unexpected exception encountered while trying to get "{tag.get_tag_name()}" tag value from device, {e}')
   
-    def get_raw_tag_data(self, tag: Tag):
+    def __get_raw_tag_data(self, tag: Tag):
         __attempts = DEFAULT_ATTEMPTS
         while __attempts > 0:
             try:
