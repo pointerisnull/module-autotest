@@ -21,6 +21,7 @@ class SocketHandler:
         __attempts = 0 
 
         while __attempts < max_attempts:
+            print(f'Attempting to open TCP socket.... attempt {__attempts + 1}/{max_attempts}')
             time.sleep(2)
             try:
                 self.__socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -56,13 +57,14 @@ class SocketHandler:
             self.open_socket()
 
     def flush_socket(self) -> None:
-        sock = self.get_socket()
-
-        if sock is None:
+        if self.__socket is None:
             logging.warning("Socket not open. Opening to be flushed...")
             self.open_socket()
-            sock = self.get_socket()
             
+        sock = self.get_socket()    
+        if sock is None:
+            return
+        
         sock.setblocking(False)
 
         try: 
