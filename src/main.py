@@ -1,6 +1,4 @@
 from core.socketHandler import SocketHandler
-from core.tagHandler import tagHandler
-from objects.FlexEdge import FlexEdge
 
 IP = '10.80.14.215' #change based on host
 

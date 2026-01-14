@@ -3,8 +3,6 @@ import time
 import logging
 import sys
 
-
-
 class SocketHandler:
     def __init__(self, remote_host_address: str, debug_port: int):
         self.__remote_host_address = str(remote_host_address)
@@ -29,27 +27,27 @@ class SocketHandler:
                 break
             
             except TimeoutError as e:
-                logging.Logger.log('error',f'TimeoutError while attempting to open socket: {e}')
+                logging.Logger.log(40,f'TimeoutError while attempting to open socket: {e}')
             except ConnectionRefusedError as e:
-                logging.Logger.log('error',f'ConnectionRefusedError while attempting to open socket: {e}')
+                logging.Logger.log(40,f'ConnectionRefusedError while attempting to open socket: {e}')
 
             __attempts += 1
             continue
         
         if __attempts >= max_attempts:
-            logging.log('critical', "Unable to communicate with device")
+            logging.Logger.log(50, "Unable to communicate with device")
             raise Exception
         
-        logging.log('info', f'Connection established with {self.__remote_host_address}')
+        logging.Logger.log(20, f'Connection established with {self.__remote_host_address}')
 
     def close_socket(self):
         try:
             self.__socket.close()
 
         except Exception as e:
-            logging.log('error', f'Error occurred while attempting to close socket: {e}')
+            logging.Logger.log(40, f'Error occurred while attempting to close socket: {e}')
         
-        logging.log('info', f'Socket successfully closed')
+        logging.Logger.log(20, f'Socket successfully closed')
         return
     
     def reset_socket(self):
