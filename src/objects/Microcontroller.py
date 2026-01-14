@@ -60,7 +60,7 @@ class RaspberryPi:
         self.io.set_pin(input_pin, val)
 
     # via mux common pin
-    def get_digital_output(self, addr=1):
+    def read_digital_output(self, addr=1):
         bin_addr = self.get_binary_address(addr)
         output_pin = self.pins['do_x']
         
@@ -95,8 +95,6 @@ class IOModule:
 
 if __name__ == "__main__":
     rpi = RaspberryPi()
-    print(rpi.get_pinout())
-    print(rpi.get_binary_address(3))
     
     rpi.set_digital_input(1, 1)
 
@@ -105,4 +103,4 @@ if __name__ == "__main__":
         time.sleep(1)
         rpi.set_digital_input(1, 0)
         time.sleep(1)
-        print(f"Output Pin: {rpi.get_digital_output(1)}")
+        print(f"Output Pin: {rpi.read_digital_output(1)}")
