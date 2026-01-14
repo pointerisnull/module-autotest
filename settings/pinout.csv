@@ -1,0 +1,10 @@
+FUNCTION,PIN,COMMENTS
+di_a,22,Input address LSB
+di_b,24,	
+di_c,26,Input address MSB
+di_x,12,Digital input
+do_a,33,Output address LSB
+do_b,35,	
+do_c,37,Output address MSB
+do_x,40,Digital output
+MODE,BOARD,"""BOARD"" : literal pin #, ""BCM"" : GPIO #"
