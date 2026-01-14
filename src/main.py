@@ -9,7 +9,7 @@ def main():
     tag_handler = tagHandler(socket_handler)
     tag = Tag("DI_1", 0)
 
-    tag_handler.get_tag_value(tag)
+    print(tag_handler.get_tag_value(tag))
 
 if (__name__ == "__main__"):
     main()

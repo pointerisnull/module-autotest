@@ -59,7 +59,9 @@ class SocketHandler:
         sock = self.get_socket()
 
         if sock is None:
-            logging.error("Cannot flush: socket is not initialized.")
+            logging.warning("Socket not open. Opening to be flushed...")
+            self.open_socket()
+            sock = self.get_socket()
             
         sock.setblocking(False)
 
