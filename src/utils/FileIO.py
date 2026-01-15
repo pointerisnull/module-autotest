@@ -2,6 +2,9 @@ import os
 import csv
 
 class FileIO:
+    def __init__(self):
+        pass
+
     def read_csv_config(self, file_path, setting_title, value_title):
         if not os.path.isfile(file_path):
            raise FileNotFoundError(f"File not found: {file_path}")
