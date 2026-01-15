@@ -25,7 +25,7 @@ def simple_test(rpi, flexedge):
             time.sleep(0.6)
             true_output = rpi.read_digital_output(addr=1)
             
-            print(f"Itteration {i}")
+            print(f"Iteration {i}")
             print(f"Actual Input: {true_signal}")
             print(f"Crimson Input: {input_tag_val}")
             print(f"Crimson Output: {output_tag_val}")
@@ -43,7 +43,7 @@ def simple_test(rpi, flexedge):
     except Exception as e:
         print(f"Test Terminated. Reason: {e}")
     
-    print(f"Test Completed. Itterations validated: {passc}")
+    print(f"Test Completed. Iterations validated: {passc}")
 
 def main():
     rpi = RaspberryPi()
