@@ -1,2 +1,3 @@
 settings/device_config.csv
 settings/pinout.csv
+/src/utils/__pycache__
