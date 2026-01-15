@@ -1,7 +1,7 @@
 import os
 import csv
 
-def read_csv_config(self, file_path, setting_title, value_title):
+def read_csv_config(file_path, setting_title, value_title):
     if not os.path.isfile(file_path):
        raise FileNotFoundError(f"File not found: {file_path}")
 
@@ -23,5 +23,5 @@ def read_csv_config(self, file_path, setting_title, value_title):
             config_dict[function_name] = pin_value
     return config_dict
     
-def read_csv_setting(self, file_path, setting_name, setting_value):
+def read_csv_setting(file_path, setting_name, setting_value):
     return {}
