@@ -4,10 +4,11 @@ import utils.FileIO as FileIO
 import time
 
 CONFIG_PATH = "./settings/device_config.csv"
+TEST_ITTERATIONS = 1000
 
 def validate(inpt, crimson_in, crimson_out, out):
     # Crimson output tag MUST be the inverse of actual output 
-    # Due to the module's open drain output (High = 0V, Low = ~0.6v)
+    # Due to the module's open drain output (High = 0V, Low = ~2.5v)
     if inpt == crimson_in == (not crimson_out) == out:
         return True
     return False
@@ -16,8 +17,9 @@ def validate(inpt, crimson_in, crimson_out, out):
 def simple_test(rpi, flexedge):
     true_signal = 1
     passc = 0
+    
     try:
-        for i in range(1000):
+        for i in range(TEST_ITTERATIONS):
             rpi.set_digital_input(addr=1, val=true_signal)
             time.sleep(0.1)
             input_tag_val = flexedge.get_tag("di_1")
@@ -26,16 +28,16 @@ def simple_test(rpi, flexedge):
             true_output = rpi.read_digital_output(addr=1)
             
             print(f"Itteration {i}")
-            print(f"Actual Input: {true_signal}")
+            print(f"Actual Input: {int(true_signal)}")
             print(f"Crimson Input: {input_tag_val}")
             print(f"Crimson Output: {output_tag_val}")
             print(f"Actual Output: {true_output}")
 
             if validate(true_signal, input_tag_val, output_tag_val, true_output):
                 passc += 1
-                print("Test Passed\n")
+                print("Pass\n")
             else:
-                print("Test Failed.\n")
+                print("Fail\n")
             time.sleep(0.1)
 
             true_signal = not true_signal
@@ -44,6 +46,7 @@ def simple_test(rpi, flexedge):
         print(f"Test Terminated. Reason: {e}")
     
     print(f"Test Completed. Itterations validated: {passc}")
+    print(f"{"{:.2f}".format(passc/TEST_ITTERATIONS*100)}% pass rate.")
 
 def main():
     rpi = RaspberryPi()
