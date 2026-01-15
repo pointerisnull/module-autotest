@@ -6,7 +6,9 @@ import time
 CONFIG_PATH = "./settings/device_config.csv"
 
 def validate(inpt, crimson_in, crimson_out, out):
-    if inpt == crimson_in == crimson_out == out:
+    # Crimson output tag MUST be the inverse of actual output 
+    # Due to the module's open drain output (High = 0V, Low = ~0.6v)
+    if inpt == crimson_in == (not crimson_out) == out:
         return True
     return False
 
