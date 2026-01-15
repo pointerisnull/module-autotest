@@ -20,7 +20,7 @@ def simple_test(rpi, flexedge):
             time.sleep(0.1)
             input_tag_val = flexedge.get_tag("di_1")
             output_tag_val = flexedge.get_tag("do_1")
-            time.sleep(0.1)
+            time.sleep(0.6)
             true_output = rpi.read_digital_output(addr=1)
             
             print(f"Itteration {i}")
@@ -33,7 +33,8 @@ def simple_test(rpi, flexedge):
                 passc += 1
                 print("Test Passed\n")
             else:
-                print("Test Failed.")
+                print("Test Failed.\n")
+            time.sleep(0.1)
 
             true_signal = not true_signal
 
