@@ -29,7 +29,7 @@ def simple_test(rpi, flexedge):
             print(f"Crimson Output: {output_tag_val}")
             print(f"Actual Output: {true_output}")
 
-            if validate():
+            if validate(true_signal, input_tag_val, output_tag_val, true_output):
                 passc += 1
                 print("Test Passed\n")
             else:
