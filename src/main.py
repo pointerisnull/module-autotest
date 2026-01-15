@@ -45,7 +45,7 @@ def simple_test(rpi, flexedge):
     except Exception as e:
         print(f"Test Terminated. Reason: {e}")
     
-    print(f"Test Completed. Itterations validated: {passc}")
+    print(f"Test Completed. Iterations validated: {passc}")
     print(f"{"{:.2f}".format(passc/TEST_ITERATIONS*100)}% pass rate.")
 
 def main():
