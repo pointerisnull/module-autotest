@@ -2,7 +2,6 @@ import RPi.GPIO as GPIO
 import time
 import os
 import csv
-import utils.FileIO as FileIO
 
 PINOUT_SETTINGS_PATH = "./settings/pinout.csv"
 
@@ -23,6 +22,7 @@ class RaspberryPi:
         self.io.setup_pins(self.pins['do_c'], GPIO.OUT)
     
     def get_pinout(self):
+        import utils.FileIO as FileIO
         # read pinout.csv
         return FileIO.read_csv_config(PINOUT_SETTINGS_PATH, 'FUNCTION', 'PIN')
         '''
