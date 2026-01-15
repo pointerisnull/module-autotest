@@ -2,7 +2,7 @@ from core.socketHandler import SocketHandler
 from core.tagHandler import tagHandler
 from objects.Tag import Tag
 from objects.Microcontroller import RaspberryPi
-from objects.FlexEdge import FLexEdge
+from objects.FlexEdge import FlexEdge
 import sys
 
 IP = '10.80.14.101' #change based on host
