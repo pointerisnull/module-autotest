@@ -1,8 +1,5 @@
-from core.socketHandler import SocketHandler
-from core.tagHandler import tagHandler
-from objects.Tag import Tag
 from objects.Microcontroller import RaspberryPi
-from objects.FlexEdge import FlexEdge
+from objects.Device import Device
 import utils.FileIO as FileIO
 
 CONFIG_PATH = "./settings/device_config.csv"
@@ -19,9 +16,9 @@ def main():
 
     IP = FileIO.read_csv_setting(CONFIG_PATH, "IP Address")
     PORT = FileIO.read_csv_setting(CONFIG_PATH, "TCP Port") 
-    fe = FlexEdge(IP, PORT)
+    flexedge = Device(IP, PORT)
 
-    demo_test(rpi, fe)
+    demo_test(rpi, flexedge)
 
 if (__name__ == "__main__"):
     main()

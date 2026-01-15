@@ -2,7 +2,8 @@ from core.socketHandler import SocketHandler
 from core.tagHandler import tagHandler
 from objects.Tag import Tag
 
-class FlexEdge:
+# Class for Crimson device
+class Device:
     def __init__(self, ip_addr: str, port: int):
         self.address = ip_addr
         self.port = port
