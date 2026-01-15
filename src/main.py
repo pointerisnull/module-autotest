@@ -15,7 +15,7 @@ def simple_test(rpi, flexedge):
     true_signal = 1
     passc = 0
     try:
-        for i in 1000:
+        for i in range(1000):
             rpi.set_digital_input(addr=1, val=true_signal)
             time.sleep(0.1)
             input_tag_val = flexedge.get_tag("di_1")
