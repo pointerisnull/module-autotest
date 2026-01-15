@@ -35,7 +35,7 @@ def simple_test(rpi, flexedge):
             else:
                 print("Test Failed.")
 
-        true_signal = not true_signal
+            true_signal = not true_signal
 
     except Exception as e:
         print(f"Test Terminated. Reason: {e}")
