@@ -22,7 +22,10 @@ class RaspberryPi:
         self.io.setup_pins(self.pins['do_c'], GPIO.OUT)
     
     def get_pinout(self):
+        import utils.FileIO as FileIO
         # read pinout.csv
+        return FileIO.read_csv_config(PINOUT_SETTINGS_PATH, 'FUNCTION', 'PIN')
+        '''
         file_path = PINOUT_SETTINGS_PATH
         if not os.path.isfile(file_path):
            raise FileNotFoundError(f"File not found: {file_path}")
@@ -44,6 +47,7 @@ class RaspberryPi:
                     pin_value = pin_raw
                 config_dict[function_name] = pin_value
         return config_dict
+        '''
 
     def get_binary_address(self, addr):
         return [int(bit) for bit in f'{addr:03b}']

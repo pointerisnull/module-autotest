@@ -1,24 +1,31 @@
 from core.socketHandler import SocketHandler
 from core.tagHandler import tagHandler
 from objects.Tag import Tag
+from objects.Microcontroller import RaspberryPi
+from objects.FlexEdge import FlexEdge
 import sys
+import utils.FileIO as FileIO
 
-IP = '10.80.14.101' #change based on host
-PORT = 23 # TCP Port
+CONFIG_PATH = "./settings/device_config.csv"
 
-def main():
+# simple test to demo since we don't have any hardware
+def demo_test():
+    IP = FileIO.read_csv_setting(CONFIG_PATH, "IP Address")
+    PORT = FileIO.read_csv_setting(CONFIG_PATH, "TCP Port") 
     socket_handler = SocketHandler(IP, PORT)
     tag_handler = tagHandler(socket_handler)
-    tag = Tag("di_1", 0)
-    '''
-    try:
-        socket_handler.open_socket()
-    except Exception as e:
-        print(e)
-        sys.exit()
-    '''
 
-    print(tag_handler.get_tag_value(tag))
+    input_tag = Tag("di_1", 0)
+    output_tag = Tag("di_1", 0)
+    
+    print(tag_handler.get_tag_value(input_tag))
+
+def main():
+    rpi = RaspberryPi()
+    rpi.set_digital_input(addr=1, val=1)
+
+
+    demo_test()
 
 if (__name__ == "__main__"):
     main()
