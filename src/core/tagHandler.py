@@ -62,8 +62,14 @@ class tagHandler:
             
     def __send_command(self, formatted_command: str):
         self.__socket_handler.flush_socket()
+        sock = self.__socket_handler.get_socket()
+
+        if sock is None:
+            logging.error("Command failed: No active socket connection.")
+            return
+    
         try:
-            self.__socket_handler.get_socket().sendall(formatted_command.encode())
+            sock.sendall(formatted_command.encode())
         except Exception as e:
             logging.error(f'Command failed, {e}')
 
