@@ -1,5 +1,6 @@
 from core.socketHandler import SocketHandler
 from core.tagHandler import tagHandler
+from objects.Tag import Tag
 
 class FlexEdge:
     def __init__(self, ip_addr: str, port: int):
@@ -24,10 +25,8 @@ class FlexEdge:
         pass
 
     def get_tag(self, tag_label: str):
-        pass
-
-    def get_tag_val(self, tag_label: str):
-        pass
+        tg = Tag(tag_label, 0)
+        return self.tag_handler.get_tag_value(tg)
 
     def set_tag_val(self, tag_label:str, val):
         pass
