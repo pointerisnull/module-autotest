@@ -25,7 +25,7 @@ class tagHandler:
                     __target_data = (__line_split[1]).replace(' ','')
                 elif 'tag not found' in line:
                     logging.error(f'Unable to find tag "{tag.get_tag_name()}" on device')
-                    logging.info("Ensure that device is configured with the proper tags CHANGE THIS LATER")
+                    logging.info("Ensure that the relevant .csv file was loaded into Crimson")
             if __target_data.isdigit():
                 return int(__target_data)
             else:
@@ -51,7 +51,7 @@ class tagHandler:
                 continue
         
         logging.critical("Failed to get response from device")
-        logging.info("Verify device connection and config")
+        logging.info("Please verify the device's physical connection and the networking info in config")
         logging.info('Exiting.')
         sys.exit()
 
