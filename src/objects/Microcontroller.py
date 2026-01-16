@@ -1,9 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-import os
-import csv
-
-PINOUT_SETTINGS_PATH = "./settings/pinout.csv"
+from common.constants import *
 
 class RaspberryPi:
     def __init__(self):

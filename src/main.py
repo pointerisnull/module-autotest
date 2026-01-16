@@ -1,9 +1,9 @@
 from objects.Microcontroller import RaspberryPi
 from objects.Device import Device
 import utils.FileIO as FileIO
+from common.constants import *
 import time
 
-CONFIG_PATH = "./settings/device_config.csv"
 TEST_ITERATIONS = 1000
 
 def validate(inpt, crimson_in, crimson_out, out):
