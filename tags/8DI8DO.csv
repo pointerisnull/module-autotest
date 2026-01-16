@@ -3,13 +3,13 @@
 
 Name,Value,Manipulate,Access,Sim,OnWrite,HasSP,Label,Alias,Desc,Class,FormType,Format / On,Format / Off,ColType,Color / On,Color / Off,Event1 / Mode,Event2 / Mode,Trigger1 / Mode,Trigger1 / Delay,Trigger1 / Action,Trigger2 / Mode,Trigger2 / Delay,Trigger2 / Action,Sec / Access,Sec / Logging
 di_1,[Module1.DI.Input1],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Active On,5,do_1 = 0,Active Off,5,do_1 = 1,Default for Object,Default for Object
-di_2,[Module1.DI.Input2],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
-di_3,[Module1.DI.Input3],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
-di_4,[Module1.DI.Input4],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
-di_5,[Module1.DI.Input5],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
-di_6,[Module1.DI.Input6],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
-di_7,[Module1.DI.Input7],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
-di_8,[Module1.DI.Input8],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
+di_2,[Module1.DI.Input2],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Active On,5,do_2 = 0,Active Off,5,do_2 = 1,Default for Object,Default for Object
+di_3,[Module1.DI.Input3],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Active On,5,do_3 = 0,Active Off,5,do_3 = 1,Default for Object,Default for Object
+di_4,[Module1.DI.Input4],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Active On,5,do_4 = 0,Active Off,5,do_4 = 1,Default for Object,Default for Object
+di_5,[Module1.DI.Input5],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Active On,5,do_5 = 0,Active Off,5,do_5 = 1,Default for Object,Default for Object
+di_6,[Module1.DI.Input6],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Active On,5,do_6 = 0,Active Off,5,do_6 = 1,Default for Object,Default for Object
+di_7,[Module1.DI.Input7],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Active On,5,do_7 = 0,Active Off,5,do_7 = 1,Default for Object,Default for Object
+di_8,[Module1.DI.Input8],Invert Bits,,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Active On,5,do_8 = 0,Active Off,5,do_8 = 1,Default for Object,Default for Object
 do_1,[Module1.DO.Output1],None,Read and Write,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
 do_2,[Module1.DO.Output2],None,Read and Write,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
 do_3,[Module1.DO.Output3],None,Read and Write,,,No,,,,,Two-State,1,0,Two-State,Lime on Black,Red on Black,Disabled,Disabled,Disabled,,,Disabled,,,Default for Object,Default for Object
