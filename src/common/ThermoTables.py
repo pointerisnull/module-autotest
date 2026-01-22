@@ -3,7 +3,7 @@
 
 class ThermoTable:
     def __init__(self, THERMO_TYPE):
-        fpath = "./src/tables/tc_"+THERMO_TYPE
+        fpath = "./tables/tc_"+THERMO_TYPE
         self.dict = self.load_lookup_table(fpath)
         self.type = THERMO_TYPE
         self.max_temp = max(self.dict)
