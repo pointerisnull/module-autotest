@@ -21,3 +21,7 @@ TC_TYPE_N = 'n'
 TC_TYPE_R = 'r'
 TC_TYPE_S = 's'
 TC_TYPE_T = 't'
+
+# GUI Defaults
+DEFAULT_WIDTH = 800
+DEFAULT_HEIGHT = 600
