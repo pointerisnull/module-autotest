@@ -18,15 +18,18 @@ from gui import Popups as popup
 class MainWindow(QMainWindow):
     def __init__(self, title):
         super().__init__()
-
-        self.config = ConfigHandler()
-        
         self.setWindowTitle(title)
         self.setGeometry(0, 0, constants.DEFAULT_WIDTH, constants.DEFAULT_HEIGHT)
         self.setWindowIcon(QIcon("./assets/icon.png"))
+        self.center_on_screen()
+
+        self.config = ConfigHandler()
+        
         self.dark_mode = True
+        self.popup = popup.PopupManager(self.dark_mode)
         self.change_style()
         
+
         self.init_menu_bar()
     
         # Startup Screen
@@ -38,7 +41,13 @@ class MainWindow(QMainWindow):
         intro = TextBox("To start, open or create a new testing configuration.")
         self.startup_screen.addWidget(intro)
         self.startup_screen.addStretch(35) # 35%
-
+    
+    def center_on_screen(self):
+        qr = self.frameGeometry()
+        cp = QDesktopWidget().availableGeometry().center()  # Center point of screen
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
+    
     def init_menu_bar(self):
         menu_bar = self.menuBar()
 
@@ -59,7 +68,7 @@ class MainWindow(QMainWindow):
         open_config.triggered.connect(self.init_UI) # Temporary
         
         hardware_config = QAction("&Hardware Configuration", self)
-        hardware_config.triggered.connect(lambda: popup.hardware_config(self, self.config))
+        hardware_config.triggered.connect(lambda: self.popup.hardware_config(self, self.config))
         hardware_config.setShortcut("Ctrl+H")
         
         crimson_config = QAction("Configure Crimson", self)
@@ -73,7 +82,7 @@ class MainWindow(QMainWindow):
 
         about_action = QAction("&About", self)
         about_action.setShortcut("Ctrl+A")
-        about_action.triggered.connect(lambda: popup.about(self, "About", "HMS Autotester version 0.0.0"))
+        about_action.triggered.connect(lambda: self.popup.about(self, "About", "HMS Autotester version 0.0.0"))
 
         # Add options to menues
         file_menu.addAction(new_config)
@@ -102,7 +111,7 @@ class MainWindow(QMainWindow):
         #config_list = QVBoxLayout() # May not be necessary
 
     def new_config(self):
-        popup.new_file(self, "New Configuration", self.config)
+        self.popup.new_file(self, "New Configuration", self.config)
         if self.config.has_changed:
             self.init_UI()
 
@@ -112,33 +121,31 @@ class MainWindow(QMainWindow):
         else:
             self.setStyleSheet(DARK_MODE)
         self.dark_mode = not self.dark_mode
+        self.popup.change_style()
         
-        # Only run on Windows
-        if os.name == 'nt':
-            try: 
-                self.update_titlebar()
-            except Exception as e:
-                print(f"Could not change window theme: {e}")
+        update_titlebar(self, self.dark_mode)
 
-    def update_titlebar(self):
-        # For Windows 10 version 2004 and later, including Windows 11, it's 20.
-        DWMWA_USE_IMMERSIVE_DARK_MODE = 20
-    
-        hwnd = self.winId().__int__()
-        value = ctypes.c_int(1 if self.dark_mode else 0) 
-        try:
-            ctypes.windll.dwmapi.DwmSetWindowAttribute(
-                hwnd, 
-                DWMWA_USE_IMMERSIVE_DARK_MODE, 
-                ctypes.byref(value), 
-                ctypes.sizeof(value)
-            )
+def update_titlebar(target_widget, is_dark_mode):
+    # Only run on Windows
+    if os.name == 'nt':
+        try: 
+            # If target_widget is passed, use it. 
+            # This handles both 'self' (from Main) and 'window' (from Popup)
+            hwnd = target_widget.winId().__int__()
+            
+            value = ctypes.c_int(1 if is_dark_mode else 0) 
+            DWMWA_USE_IMMERSIVE_DARK_MODE = 20
+
+            try:
+                ctypes.windll.dwmapi.DwmSetWindowAttribute(
+                    hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE, 
+                    ctypes.byref(value), ctypes.sizeof(value)
+                )
+            except Exception:
+                DWMWA_USE_IMMERSIVE_DARK_MODE_OLD = 19
+                ctypes.windll.dwmapi.DwmSetWindowAttribute(
+                    hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE_OLD, 
+                    ctypes.byref(value), ctypes.sizeof(value)
+                )
         except Exception as e:
-            # Fallback for older Windows 10 versions if 20 fails
-            DWMWA_USE_IMMERSIVE_DARK_MODE_OLD = 19
-            ctypes.windll.dwmapi.DwmSetWindowAttribute(
-                hwnd, 
-                DWMWA_USE_IMMERSIVE_DARK_MODE_OLD, 
-                ctypes.byref(value), 
-                ctypes.sizeof(value)
-            )
+            print(f"Could not change window theme: {e}")
