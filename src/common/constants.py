@@ -25,3 +25,6 @@ TC_TYPE_T = 't'
 # GUI Defaults
 DEFAULT_WIDTH = 800
 DEFAULT_HEIGHT = 600
+
+# Modules
+MODULES = ['8DI/8DO', '2UIN MIX', '4UIN MIX', '6UIN']

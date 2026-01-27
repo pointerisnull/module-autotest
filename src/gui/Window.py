@@ -18,6 +18,9 @@ from gui import Popups as popup
 class MainWindow(QMainWindow):
     def __init__(self, title):
         super().__init__()
+
+        self.config = ConfigHandler()
+        
         self.setWindowTitle(title)
         self.setGeometry(0, 0, constants.DEFAULT_WIDTH, constants.DEFAULT_HEIGHT)
         self.setWindowIcon(QIcon("./assets/icon.png"))
@@ -27,7 +30,7 @@ class MainWindow(QMainWindow):
         self.init_menu_bar()
     
         # Startup Screen
-        self.container = ContainerWithBackground("./assets/hms_logo.png")
+        self.container = ContainerWithBackground("./assets/rl_logo.png")
         self.setCentralWidget(self.container)
         self.startup_screen = QVBoxLayout(self.container)
         # Force welcome meathod to be below center logo
@@ -35,8 +38,6 @@ class MainWindow(QMainWindow):
         intro = TextBox("To start, open or create a new testing configuration.")
         self.startup_screen.addWidget(intro)
         self.startup_screen.addStretch(35) # 35%
-
-        self.config = ConfigHandler()
 
     def init_menu_bar(self):
         menu_bar = self.menuBar()
@@ -58,6 +59,7 @@ class MainWindow(QMainWindow):
         open_config.triggered.connect(self.init_UI) # Temporary
         
         hardware_config = QAction("&Hardware Configuration", self)
+        hardware_config.triggered.connect(lambda: popup.hardware_config(self, self.config))
         hardware_config.setShortcut("Ctrl+H")
         
         crimson_config = QAction("Configure Crimson", self)
@@ -71,7 +73,7 @@ class MainWindow(QMainWindow):
 
         about_action = QAction("&About", self)
         about_action.setShortcut("Ctrl+A")
-        about_action.triggered.connect(lambda: popup.info(self, "About", "HMS Autotester version 0.0.0"))
+        about_action.triggered.connect(lambda: popup.about(self, "About", "HMS Autotester version 0.0.0"))
 
         # Add options to menues
         file_menu.addAction(new_config)
