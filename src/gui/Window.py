@@ -25,14 +25,14 @@ class MainWindow(QMainWindow):
         self.change_style()
         
         self.init_menu_bar()
-        
+    
         # Startup Screen
         self.container = ContainerWithBackground("./assets/hms_logo.png")
         self.setCentralWidget(self.container)
         self.startup_screen = QVBoxLayout(self.container)
         # Force welcome meathod to be below center logo
         self.startup_screen.addStretch(65) # 65%
-        intro = TextBox("To start, select or create a new testing configuration.")
+        intro = TextBox("To start, open or create a new testing configuration.")
         self.startup_screen.addWidget(intro)
         self.startup_screen.addStretch(35) # 35%
 
@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         
         open_config = QAction("&Open Configuration", self)
         open_config.setShortcut("Ctrl+O")
-        open_config.triggered.connect(lambda: print(f"{self.config.get_config()}")) # Temporary
+        open_config.triggered.connect(self.init_UI) # Temporary
         
         hardware_config = QAction("&Hardware Configuration", self)
         hardware_config.setShortcut("Ctrl+H")
@@ -88,8 +88,14 @@ class MainWindow(QMainWindow):
         help_menu.addAction(about_action)
 
     def init_UI(self):
-        io_container = QHBoxLayout()
-        config_container = QHBoxLayout()
+        self.container.deleteLater()
+        self.container = QWidget()
+        self.setCentralWidget(self.container)
+
+        io_container = QHBoxLayout(self.container)
+        io_container.addWidget(TextBox("IO CONTAINER"))
+        config_container = QHBoxLayout(self.container)
+        config_container.addWidget(TextBox("CONFIG CONTAINER"))
         #io_list = QVBoxLayout # May not be necessary
         #config_list = QVBoxLayout() # May not be necessary
 
