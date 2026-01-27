@@ -6,6 +6,7 @@ import sys
 if __name__ == "__main__":
     # sys.argv - used to process command line arguments when program is run
     app = QApplication(sys.argv)
+    app.setStyle("Fusion") 
     window = MainWindow("HMS Module Autotester")
     window.show()
 

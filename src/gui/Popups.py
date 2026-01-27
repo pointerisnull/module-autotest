@@ -1,8 +1,6 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
 
-from core import ConfigHandler
-
 def info(window, title, msg):
     QMessageBox.about(window, title, msg)
 

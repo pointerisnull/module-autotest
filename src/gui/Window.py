@@ -1,8 +1,11 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
 import sys
+import os
+import ctypes
 
 from gui.Elements import *
+from gui.Themes import *
 from core.ConfigHandler import ConfigHandler
 from common import constants
 from gui import Popups as popup
@@ -13,16 +16,22 @@ from gui import Popups as popup
 class MainWindow(QMainWindow):
     def __init__(self, title):
         super().__init__()
-        self.setGeometry(0, 0, constants.DEFAULT_WIDTH, constants.DEFAULT_HEIGHT)
         self.setWindowTitle(title)
-        self.container = QWidget()
+        self.setGeometry(0, 0, constants.DEFAULT_WIDTH, constants.DEFAULT_HEIGHT)
+        self.dark_mode = True
+        self.change_style()
+        
+        self.init_menu_bar()
+        
+        # Startup Screen
+        self.container = ContainerWithBackground("./assets/hms_logo.png")
         self.setCentralWidget(self.container)
         self.startup_screen = QVBoxLayout(self.container)
-
-        self.intro = TextBox("To start, select or create a new testing configuration.")
-        self.startup_screen.addWidget(self.intro)
-
-        self.init_menu_bar()
+        # Force welcome meathod to be below center logo
+        self.startup_screen.addStretch(65) # 65%
+        intro = TextBox("To start, select or create a new testing configuration.")
+        self.startup_screen.addWidget(intro)
+        self.startup_screen.addStretch(35) # 35%
 
         self.config = ConfigHandler()
 
@@ -49,7 +58,9 @@ class MainWindow(QMainWindow):
         hardware_config.setShortcut("Ctrl+H")
         
         crimson_config = QAction("Configure Crimson", self)
-        
+        style_config = QAction("Change Style", self)
+        style_config.triggered.connect(self.change_style)       
+
         exit_action = QAction("&Exit", self)
         exit_action.setShortcut("Ctrl+Q")
         exit_action.triggered.connect(self.close)
@@ -67,6 +78,8 @@ class MainWindow(QMainWindow):
         edit_menu.addAction(hardware_config)
         
         view_menu.addAction(crimson_config)
+        view_menu.addSeparator()
+        view_menu.addAction(style_config)
         
         help_menu.addAction(about_action)
 
@@ -81,6 +94,42 @@ class MainWindow(QMainWindow):
         if self.config.has_changed:
             self.init_UI()
 
+    def change_style(self):
+        if self.dark_mode:
+            self.setStyleSheet(LIGHT_MODE)
+        else:
+            self.setStyleSheet(DARK_MODE)
+        self.dark_mode = not self.dark_mode
+        
+        # Only run on Windows
+        if os.name == 'nt':
+            try: 
+                self.update_titlebar()
+            except Exception as e:
+                print(f"Could not change window theme: {e}")
+
+    def update_titlebar(self):
+        # For Windows 10 version 2004 and later, including Windows 11, it's 20.
+        DWMWA_USE_IMMERSIVE_DARK_MODE = 20
+    
+        hwnd = self.winId().__int__()
+        value = ctypes.c_int(1 if self.dark_mode else 0) 
+        try:
+            ctypes.windll.dwmapi.DwmSetWindowAttribute(
+                hwnd, 
+                DWMWA_USE_IMMERSIVE_DARK_MODE, 
+                ctypes.byref(value), 
+                ctypes.sizeof(value)
+            )
+        except Exception as e:
+            # Fallback for older Windows 10 versions if 20 fails
+            DWMWA_USE_IMMERSIVE_DARK_MODE_OLD = 19
+            ctypes.windll.dwmapi.DwmSetWindowAttribute(
+                hwnd, 
+                DWMWA_USE_IMMERSIVE_DARK_MODE_OLD, 
+                ctypes.byref(value), 
+                ctypes.sizeof(value)
+            )
 
 if __name__ == "__main__":
     # sys.argv - used to process command line arguments when program is run
