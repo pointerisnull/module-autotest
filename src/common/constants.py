@@ -1,0 +1,27 @@
+# TCP and Crimson download ports
+DEFAULT_PORT = 23
+DEFAULT_DOWNLOAD_PORT = 789
+
+# Crimson user auth
+CRIMSON_USER = "admin"
+CRIMSION_PASS = "password"
+
+BACKOFF_BASE = 2
+
+# File paths
+PINOUT_SETTINGS_PATH = "./settings/pinout.csv"
+CONFIG_PATH = "./settings/device_config.csv"
+
+# Thermocouple Types
+TC_TYPE_B = 'b'
+TC_TYPE_E = 'e'
+TC_TYPE_J = 'j'
+TC_TYPE_K = 'k'
+TC_TYPE_N = 'n'
+TC_TYPE_R = 'r'
+TC_TYPE_S = 's'
+TC_TYPE_T = 't'
+
+# GUI Defaults
+DEFAULT_WIDTH = 800
+DEFAULT_HEIGHT = 600

@@ -1,10 +1,10 @@
 from objects.Microcontroller import RaspberryPi
 from objects.Device import Device
 import utils.FileIO as FileIO
+from common.constants import *
 import time
 
-CONFIG_PATH = "./settings/device_config.csv"
-TEST_ITTERATIONS = 1000
+TEST_ITERATIONS = 1000
 
 def validate(inpt, crimson_in, crimson_out, out):
     # Crimson output tag MUST be the inverse of actual output 
@@ -19,7 +19,7 @@ def simple_test(rpi, flexedge):
     passc = 0
     
     try:
-        for i in range(TEST_ITTERATIONS):
+        for i in range(TEST_ITERATIONS):
             rpi.set_digital_input(addr=1, val=true_signal)
             time.sleep(0.1)
             input_tag_val = flexedge.get_tag("di_1")
@@ -27,7 +27,7 @@ def simple_test(rpi, flexedge):
             time.sleep(0.6)
             true_output = rpi.read_digital_output(addr=1)
             
-            print(f"Itteration {i}")
+            print(f"Iteration {i}")
             print(f"Actual Input: {int(true_signal)}")
             print(f"Crimson Input: {input_tag_val}")
             print(f"Crimson Output: {output_tag_val}")
@@ -45,8 +45,8 @@ def simple_test(rpi, flexedge):
     except Exception as e:
         print(f"Test Terminated. Reason: {e}")
     
-    print(f"Test Completed. Itterations validated: {passc}")
-    print(f"{"{:.2f}".format(passc/TEST_ITTERATIONS*100)}% pass rate.")
+    print(f"Test Completed. Iterations validated: {passc}")
+    print(f"{"{:.2f}".format(passc/TEST_ITERATIONS*100)}% pass rate.")
 
 def main():
     rpi = RaspberryPi()

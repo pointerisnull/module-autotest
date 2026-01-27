@@ -1,9 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-import os
-import csv
-
-PINOUT_SETTINGS_PATH = "./settings/pinout.csv"
+from common.constants import *
 
 class RaspberryPi:
     def __init__(self):
@@ -85,3 +82,4 @@ if __name__ == "__main__":
         rpi.set_digital_input(1, 0)
         time.sleep(1)
         print(f"Output Pin: {rpi.read_digital_output(1)}")
+

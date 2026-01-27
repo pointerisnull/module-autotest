@@ -3,6 +3,10 @@ import time
 import logging
 import sys
 from logging import Logger
+from common import constants
+
+DEFAULT_SOCKET_TIMEOUT = 2
+DEFAULT_FIND_ATTEMPTS = 5
 
 class SocketHandler:
     def __init__(self, remote_host_address: str, debug_port: int):
@@ -16,8 +20,8 @@ class SocketHandler:
     def get_socket(self):
         return self.__socket 
     
-    def open_socket(self, max_attempts = 5):
-        __TIMEOUT = 2
+    def open_socket(self, max_attempts: int=DEFAULT_FIND_ATTEMPTS):
+        __TIMEOUT = DEFAULT_SOCKET_TIMEOUT
         __attempts = 0 
 
         while __attempts < max_attempts:
@@ -25,7 +29,7 @@ class SocketHandler:
             time.sleep(2)
             try:
                 self.__socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                self.__socket.settimeout(__TIMEOUT)
+                self.__socket.settimeout(constants.BACKOFF_BASE ** __TIMEOUT)
                 self.__socket.connect((self.__remote_host_address, self.__debug_port))
                 break
             
