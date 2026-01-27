@@ -52,13 +52,14 @@ class MainWindow(QMainWindow):
         
         open_config = QAction("&Open Configuration", self)
         open_config.setShortcut("Ctrl+O")
-        open_config.triggered.connect(lambda: print(f"{self.config.get_module()}")) # Temporary
+        open_config.triggered.connect(lambda: print(f"{self.config.get_config()}")) # Temporary
         
         hardware_config = QAction("&Hardware Configuration", self)
         hardware_config.setShortcut("Ctrl+H")
         
         crimson_config = QAction("Configure Crimson", self)
-        style_config = QAction("Change Style", self)
+        style_config = QAction("&Change Style", self)
+        style_config.setShortcut("Ctrl+Shift+D")
         style_config.triggered.connect(self.change_style)       
 
         exit_action = QAction("&Exit", self)
@@ -130,11 +131,3 @@ class MainWindow(QMainWindow):
                 ctypes.byref(value), 
                 ctypes.sizeof(value)
             )
-
-if __name__ == "__main__":
-    # sys.argv - used to process command line arguments when program is run
-    app = QApplication(sys.argv)
-    window = MainWindow("HMS Module Autotester")
-    window.show()
-
-    sys.exit(app.exec_())
