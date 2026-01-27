@@ -1,5 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
+
 import sys
 import os
 import ctypes
@@ -18,6 +20,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle(title)
         self.setGeometry(0, 0, constants.DEFAULT_WIDTH, constants.DEFAULT_HEIGHT)
+        self.setWindowIcon(QIcon("./assets/icon.png"))
         self.dark_mode = True
         self.change_style()
         
