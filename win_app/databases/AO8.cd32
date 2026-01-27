@@ -1,0 +1,2776 @@
+TreeFile {
+ C3Data {
+  Guid            = {24AC357E-79B5-48FB-9A76-C9A6563E131A}
+  Version         = 3200
+  Config          = "Red Lion Controls"
+  Build           = "1051"
+  Recomp          = 0
+  Circle          = 0
+  Pending         = 0
+  Image           = 1
+  Locked          = 0
+  Password        = ""
+  Email           = ""
+  LastLinkOptions = "TCP/IP,Fast,192.168.222.222"
+  System {
+   *        = "GenericSystemItem"
+   Fixed    = 2
+   Format   = 4017
+   Major    = 2
+   LastAddr = ""
+   Comms {
+    Fixed     = 3
+    Handle    = 9
+    NoComms   = 0
+    MaxPort   = 8
+    MaxDevice = 4
+    MaxBlock  = 0
+    StrPad    = 0
+    Ports [
+     Fixed     = 4
+     CommsPortSerial {
+      NDX       = 0
+      Fixed     = 261
+      Name      = "Serial Port 1"
+      Where     = "Base Unit"
+      PortTag   = "S0"
+      Number    = 1
+      PortPhys  = 0
+      PortLog   = 0
+      Binding   = 3
+      DriverID  = 0
+      Devices [
+       Fixed     = 262
+       ]
+      DriverRpc = 0
+      Phys      = 34
+      Baud {
+       *        = "CodedItem"
+       Fixed    = 263
+       Source   = 0x7
+       .        = 0x30783442303000
+       Object   = 0x8
+       .        = 0x41040000B34B0080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Data {
+       *        = "CodedItem"
+       Fixed    = 264
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Stop {
+       *        = "CodedItem"
+       Fixed    = 265
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Parity {
+       *        = "CodedItem"
+       Fixed    = 266
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Mode {
+       *        = "CodedItem"
+       Fixed    = 267
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      ShareEnable {
+       *        = "CodedItem"
+       Fixed    = 268
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      SharePort {
+       *        = "CodedItem"
+       Fixed    = 269
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      }
+     CommsPortSerial {
+      NDX       = 1
+      Fixed     = 270
+      Name      = "Serial Port 2"
+      Where     = "Base Unit"
+      PortTag   = "S1"
+      Number    = 2
+      PortPhys  = 1
+      PortLog   = 0
+      Binding   = 3
+      DriverID  = 0
+      Devices [
+       Fixed     = 271
+       ]
+      DriverRpc = 0
+      Phys      = 12
+      Baud {
+       *        = "CodedItem"
+       Fixed    = 272
+       Source   = 0x7
+       .        = 0x30783442303000
+       Object   = 0x8
+       .        = 0x41040000B34B0080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Data {
+       *        = "CodedItem"
+       Fixed    = 273
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Stop {
+       *        = "CodedItem"
+       Fixed    = 274
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Parity {
+       *        = "CodedItem"
+       Fixed    = 275
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Mode {
+       *        = "CodedItem"
+       Fixed    = 276
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      ShareEnable {
+       *        = "CodedItem"
+       Fixed    = 277
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      SharePort {
+       *        = "CodedItem"
+       Fixed    = 278
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      }
+     CommsPortSerial {
+      NDX       = 2
+      Fixed     = 279
+      Name      = "Serial Port 3"
+      Where     = "Base Unit"
+      PortTag   = "S2"
+      Number    = 3
+      PortPhys  = 2
+      PortLog   = 0
+      Binding   = 3
+      DriverID  = 0
+      Devices [
+       Fixed     = 280
+       ]
+      DriverRpc = 0
+      Phys      = 12
+      Baud {
+       *        = "CodedItem"
+       Fixed    = 281
+       Source   = 0x7
+       .        = 0x30783442303000
+       Object   = 0x8
+       .        = 0x41040000B34B0080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Data {
+       *        = "CodedItem"
+       Fixed    = 282
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Stop {
+       *        = "CodedItem"
+       Fixed    = 283
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Parity {
+       *        = "CodedItem"
+       Fixed    = 284
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Mode {
+       *        = "CodedItem"
+       Fixed    = 285
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      ShareEnable {
+       *        = "CodedItem"
+       Fixed    = 286
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      SharePort {
+       *        = "CodedItem"
+       Fixed    = 287
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      }
+     ]
+    Option0 {
+     Fixed  = 5
+     Slot   = 0
+     Type   = 0
+     Ports [
+      Fixed  = 6
+      ]
+     Number = 4294967295
+     Module = ""
+     }
+    Option1 {
+     Fixed  = 7
+     Slot   = 1
+     Type   = 0
+     Ports [
+      Fixed  = 8
+      ]
+     Number = 4294967295
+     Module = ""
+     }
+    Ethernet {
+     Fixed       = 9
+     Face0 {
+      Fixed = 10
+      Mode {
+       *        = "CodedItem"
+       Fixed    = 11
+       Source   = 0x4
+       .        = 0x30783100
+       Object   = 0x6
+       .        = 0x410400000180
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      EnableFull {
+       *        = "CodedItem"
+       Fixed    = 12
+       Source   = 0x4
+       .        = 0x30783100
+       Object   = 0x6
+       .        = 0x410400000180
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Enable100 {
+       *        = "CodedItem"
+       Fixed    = 13
+       Source   = 0x4
+       .        = 0x30783100
+       Object   = 0x6
+       .        = 0x410400000180
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Address {
+       *        = "CodedItem"
+       Fixed    = 14
+       Source   = 0xb
+       .        = 0x3078433041383031313400
+       Object   = 0xa
+       .        = 0x41040000B4C0A8011480
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      NetMask {
+       *        = "CodedItem"
+       Fixed    = 15
+       Source   = 0xb
+       .        = 0x3078464646464646303000
+       Object   = 0x9
+       .        = 0x41040000B30100BA80
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Gateway {
+       *        = "CodedItem"
+       Fixed    = 16
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Metric {
+       *        = "CodedItem"
+       Fixed    = 17
+       Source   = 0x4
+       .        = 0x30783100
+       Object   = 0x6
+       .        = 0x410400000180
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      DNSMode {
+       *        = "CodedItem"
+       Fixed    = 18
+       Source   = 0x4
+       .        = 0x30783100
+       Object   = 0x6
+       .        = 0x410400000180
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      DNS1 {
+       *        = "CodedItem"
+       Fixed    = 19
+       Source   = 0xa
+       .        = 0x30783830383038303800
+       Object   = 0xa
+       .        = 0x41040000B40808080880
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      DNS2 {
+       *        = "CodedItem"
+       Fixed    = 20
+       Source   = 0xa
+       .        = 0x30783830383034303400
+       Object   = 0xa
+       .        = 0x41040000B40808040480
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      SendMSS {
+       *        = "CodedItem"
+       Fixed    = 21
+       Source   = 0x6
+       .        = 0x307835303000
+       Object   = 0x8
+       .        = 0x41040000B3050080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      RecvMSS {
+       *        = "CodedItem"
+       Fixed    = 22
+       Source   = 0x6
+       .        = 0x307835303000
+       Object   = 0x8
+       .        = 0x41040000B3050080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      }
+     Face1 {
+      Fixed = 23
+      Mode {
+       *        = "CodedItem"
+       Fixed    = 24
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      EnableFull {
+       *        = "CodedItem"
+       Fixed    = 25
+       Source   = 0x4
+       .        = 0x30783100
+       Object   = 0x6
+       .        = 0x410400000180
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Enable100 {
+       *        = "CodedItem"
+       Fixed    = 26
+       Source   = 0x4
+       .        = 0x30783100
+       Object   = 0x6
+       .        = 0x410400000180
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Address {
+       *        = "CodedItem"
+       Fixed    = 27
+       Source   = 0xb
+       .        = 0x3078433041383032313400
+       Object   = 0xa
+       .        = 0x41040000B4C0A8021480
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      NetMask {
+       *        = "CodedItem"
+       Fixed    = 28
+       Source   = 0xb
+       .        = 0x3078464646464646303000
+       Object   = 0x9
+       .        = 0x41040000B30100BA80
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Gateway {
+       *        = "CodedItem"
+       Fixed    = 29
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      Metric {
+       *        = "CodedItem"
+       Fixed    = 30
+       Source   = 0x4
+       .        = 0x30783100
+       Object   = 0x6
+       .        = 0x410400000180
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      DNSMode {
+       *        = "CodedItem"
+       Fixed    = 31
+       Source   = 0x4
+       .        = 0x30783000
+       Object   = 0x6
+       .        = 0x410400000080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      DNS1 {
+       *        = "CodedItem"
+       Fixed    = 32
+       Source   = 0xa
+       .        = 0x30783830383038303800
+       Object   = 0xa
+       .        = 0x41040000B40808080880
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      DNS2 {
+       *        = "CodedItem"
+       Fixed    = 33
+       Source   = 0xa
+       .        = 0x30783830383034303400
+       Object   = 0xa
+       .        = 0x41040000B40808040480
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      SendMSS {
+       *        = "CodedItem"
+       Fixed    = 34
+       Source   = 0x6
+       .        = 0x307835303000
+       Object   = 0x8
+       .        = 0x41040000B3050080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      RecvMSS {
+       *        = "CodedItem"
+       Fixed    = 35
+       Source   = 0x6
+       .        = 0x307835303000
+       Object   = 0x8
+       .        = 0x41040000B3050080
+       ReqType  = 1
+       ActType  = 1
+       ActFlags = 1
+       }
+      }
+     Routing     = 0
+     Download    = 1
+     DownPort    = 789
+     SendPort    = 789
+     DownMode    = 3
+     UseSendPort = 1
+     DownIP      = 3232235796
+     EnableTls   = 1
+     RootSource  = 0
+     RootFile    = ""
+     ZeroEnable  = 3
+     ZeroName    = ""
+     Routes {
+      Fixed   = 36
+      }
+     Ports [
+      Fixed       = 37
+      CommsPortNetwork {
+       NDX       = 0
+       Fixed     = 1006
+       Name      = "Protocol 1"
+       Where     = ""
+       PortTag   = ""
+       Number    = 5
+       PortPhys  = 4294967295
+       PortLog   = 4294967295
+       Binding   = 1
+       DriverID  = 0
+       Devices [
+        Fixed     = 1007
+        ]
+       DriverRpc = 0
+       }
+      CommsPortNetwork {
+       NDX       = 1
+       Fixed     = 1008
+       Name      = "Protocol 2"
+       Where     = ""
+       PortTag   = ""
+       Number    = 6
+       PortPhys  = 4294967295
+       PortLog   = 4294967295
+       Binding   = 1
+       DriverID  = 0
+       Devices [
+        Fixed     = 1009
+        ]
+       DriverRpc = 0
+       }
+      CommsPortNetwork {
+       NDX       = 2
+       Fixed     = 1010
+       Name      = "Protocol 3"
+       Where     = ""
+       PortTag   = ""
+       Number    = 7
+       PortPhys  = 4294967295
+       PortLog   = 4294967295
+       Binding   = 1
+       DriverID  = 0
+       Devices [
+        Fixed     = 1011
+        ]
+       DriverRpc = 0
+       }
+      CommsPortNetwork {
+       NDX       = 3
+       Fixed     = 1012
+       Name      = "Protocol 4"
+       Where     = ""
+       PortTag   = ""
+       Number    = 8
+       PortPhys  = 4294967295
+       PortLog   = 4294967295
+       Binding   = 1
+       DriverID  = 0
+       Devices [
+        Fixed     = 1013
+        ]
+       DriverRpc = 0
+       }
+      ]
+     }
+    Services {
+     Fixed = 38
+     List [
+      Fixed = 39
+      ServiceOpcUa {
+       NDX         = 0
+       Fixed       = 40
+       Handle      = 2
+       Enable {
+        *        = "CodedItem"
+        Fixed    = 41
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Port        = 4840
+       Layout      = 0
+       Tree        = 0
+       Array       = 0
+       Accept      = 1
+       FloatType   = 0
+       BooleanType = 0
+       NameSelect  = 0
+       Props       = 0
+       PubSub      = 1
+       HistEnable  = 0
+       HistSample  = 1
+       HistQuota   = 50
+       HistTime    = 65
+       Anon        = 1
+       Write       = 0
+       Set {
+        }
+       Set2 {
+        }
+       Debug       = 0
+       Unchanged   = 1
+       IdSrc       = 1
+       TagMode     = 0
+       }
+      TimeSync {
+       NDX    = 1
+       Fixed  = 42
+       Handle = 3
+       Enable {
+        *        = "CodedItem"
+        Fixed    = 43
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Expose {
+        *        = "CodedItem"
+        Fixed    = 44
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SyncUDP {
+        *        = "CodedItem"
+        Fixed    = 45
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SyncDST {
+        *        = "CodedItem"
+        Fixed    = 46
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       DHCP {
+        *        = "CodedItem"
+        Fixed    = 47
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Server {
+        *        = "CodedItem"
+        Fixed    = 48
+        Source   = 0xb
+        .        = 0x3078383130363046314300
+        Object   = 0xa
+        .        = 0x41040000B481060F1C80
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SyncGPS {
+        *        = "CodedItem"
+        Fixed    = 49
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SyncGSM {
+        *        = "CodedItem"
+        Fixed    = 50
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Delay {
+        *        = "CodedItem"
+        Fixed    = 51
+        Source   = 0x6
+        .        = 0x307831453000
+        Object   = 0x8
+        .        = 0x41040000B301E080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       LogMode {
+        *        = "CodedItem"
+        Fixed    = 52
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       LogSync {
+        *        = "CodedItem"
+        Fixed    = 53
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Zulu {
+        *        = "CodedItem"
+        Fixed    = 54
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       }
+      OPCServer {
+       NDX    = 2
+       Fixed  = 55
+       Handle = 4
+       Enable {
+        *        = "CodedItem"
+        Fixed    = 56
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Socket {
+        *        = "CodedItem"
+        Fixed    = 57
+        Source   = 0x6
+        .        = 0x307833313600
+        Object   = 0x8
+        .        = 0x41040000B3031680
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Count {
+        *        = "CodedItem"
+        Fixed    = 58
+        Source   = 0x4
+        .        = 0x30783200
+        Object   = 0x6
+        .        = 0x410400000280
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Restrict {
+        *        = "CodedItem"
+        Fixed    = 59
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SecAddr {
+        *        = "CodedItem"
+        Fixed    = 60
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SecMask {
+        *        = "CodedItem"
+        Fixed    = 61
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       }
+      FTPServer {
+       NDX    = 3
+       Fixed  = 62
+       Handle = 5
+       Enable {
+        *        = "CodedItem"
+        Fixed    = 63
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Anon {
+        *        = "CodedItem"
+        Fixed    = 64
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       TlsMode {
+        *        = "CodedItem"
+        Fixed    = 65
+        Source   = 0x4
+        .        = 0x30783100
+        Object   = 0x6
+        .        = 0x410400000180
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       LogFile {
+        *        = "CodedItem"
+        Fixed    = 66
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       PortNumber {
+        *        = "CodedItem"
+        Fixed    = 67
+        Source   = 0x5
+        .        = 0x3078313500
+        Object   = 0x6
+        .        = 0x410400001580
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Debug  = 0
+       }
+      FileSync {
+       NDX    = 4
+       Fixed  = 68
+       Handle = 6
+       Enable {
+        *        = "CodedItem"
+        Fixed    = 69
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       LogSync {
+        *        = "CodedItem"
+        Fixed    = 70
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       FtpServer {
+        *        = "CodedItem"
+        Fixed    = 71
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       FtpPort {
+        *        = "CodedItem"
+        Fixed    = 72
+        Source   = 0x5
+        .        = 0x3078313500
+        Object   = 0x6
+        .        = 0x410400001580
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       FtpSSL {
+        *        = "CodedItem"
+        Fixed    = 73
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Passive {
+        *        = "CodedItem"
+        Fixed    = 74
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       PerFile {
+        *        = "CodedItem"
+        Fixed    = 75
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       TestSize {
+        *        = "CodedItem"
+        Fixed    = 76
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Keep {
+        *        = "CodedItem"
+        Fixed    = 77
+        Source   = 0x4
+        .        = 0x30784100
+        Object   = 0x6
+        .        = 0x410400000A80
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       LogFile {
+        *        = "CodedItem"
+        Fixed    = 78
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Freq {
+        *        = "CodedItem"
+        Fixed    = 79
+        Source   = 0x4
+        .        = 0x30783100
+        Object   = 0x6
+        .        = 0x410400000180
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       FreqMins {
+        *        = "CodedItem"
+        Fixed    = 80
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Delay {
+        *        = "CodedItem"
+        Fixed    = 81
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Drive {
+        *        = "CodedItem"
+        Fixed    = 82
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Debug  = 0
+       }
+      MailManager {
+       NDX      = 5
+       Fixed    = 83
+       Handle   = 7
+       Enable {
+        *        = "CodedItem"
+        Fixed    = 137
+        Source   = 0x4
+        .        = 0x30783100
+        Object   = 0x6
+        .        = 0x410400000180
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       PanelName {
+        *        = "CodedItem"
+        Fixed    = 138
+        Source   = 0x11
+        .        = 0x224372696D736F6E204465766963652200
+        Object   = 0x17
+        .        = 0x43040000B6000F4372696D736F6E204465766963650080
+        ReqType  = 3
+        ActType  = 3
+        ActFlags = 1
+        }
+       SMTP {
+        *        = "CodedItem"
+        Fixed    = 139
+        Source   = 0x4
+        .        = 0x30783100
+        Object   = 0x6
+        .        = 0x410400000180
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Mode {
+        *        = "CodedItem"
+        Fixed    = 140
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       MailServer {
+        *        = "CodedItem"
+        Fixed    = 142
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       MailPort {
+        *        = "CodedItem"
+        Fixed    = 141
+        Source   = 0x5
+        .        = 0x3078313900
+        Object   = 0x6
+        .        = 0x410400001980
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Reverse {
+        Fixed = 84
+        Name  = ""
+        }
+       Time1 {
+        *        = "CodedItem"
+        Fixed    = 143
+        Source   = 0x5
+        .        = 0x3078314500
+        Object   = 0x6
+        .        = 0x410400001E80
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       LogFile {
+        *        = "CodedItem"
+        Fixed    = 144
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Auth {
+        *        = "CodedItem"
+        Fixed    = 145
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SMS {
+        *        = "CodedItem"
+        Fixed    = 146
+        Source   = 0x4
+        .        = 0x30783100
+        Object   = 0x6
+        .        = 0x410400000180
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Relay {
+        *        = "CodedItem"
+        Fixed    = 147
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       DateForm = 0
+       SSL {
+        *        = "CodedItem"
+        Fixed    = 148
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Contacts {
+        Fixed = 85
+        List [
+         Fixed = 86
+         {
+          NDX   = 0
+          Fixed = 87
+          Name  = ""
+          }
+         {
+          NDX   = 1
+          Fixed = 88
+          Name  = ""
+          }
+         {
+          NDX   = 2
+          Fixed = 89
+          Name  = ""
+          }
+         {
+          NDX   = 3
+          Fixed = 90
+          Name  = ""
+          }
+         {
+          NDX   = 4
+          Fixed = 91
+          Name  = ""
+          }
+         {
+          NDX   = 5
+          Fixed = 92
+          Name  = ""
+          }
+         {
+          NDX   = 6
+          Fixed = 93
+          Name  = ""
+          }
+         {
+          NDX   = 7
+          Fixed = 94
+          Name  = ""
+          }
+         {
+          NDX   = 8
+          Fixed = 95
+          Name  = ""
+          }
+         {
+          NDX   = 9
+          Fixed = 96
+          Name  = ""
+          }
+         {
+          NDX   = 10
+          Fixed = 97
+          Name  = ""
+          }
+         {
+          NDX   = 11
+          Fixed = 98
+          Name  = ""
+          }
+         {
+          NDX   = 12
+          Fixed = 99
+          Name  = ""
+          }
+         {
+          NDX   = 13
+          Fixed = 100
+          Name  = ""
+          }
+         {
+          NDX   = 14
+          Fixed = 101
+          Name  = ""
+          }
+         {
+          NDX   = 15
+          Fixed = 102
+          Name  = ""
+          }
+         {
+          NDX   = 16
+          Fixed = 103
+          Name  = ""
+          }
+         {
+          NDX   = 17
+          Fixed = 104
+          Name  = ""
+          }
+         {
+          NDX   = 18
+          Fixed = 105
+          Name  = ""
+          }
+         {
+          NDX   = 19
+          Fixed = 106
+          Name  = ""
+          }
+         {
+          NDX   = 20
+          Fixed = 107
+          Name  = ""
+          }
+         {
+          NDX   = 21
+          Fixed = 108
+          Name  = ""
+          }
+         {
+          NDX   = 22
+          Fixed = 109
+          Name  = ""
+          }
+         {
+          NDX   = 23
+          Fixed = 110
+          Name  = ""
+          }
+         {
+          NDX   = 24
+          Fixed = 111
+          Name  = ""
+          }
+         {
+          NDX   = 25
+          Fixed = 112
+          Name  = ""
+          }
+         {
+          NDX   = 26
+          Fixed = 113
+          Name  = ""
+          }
+         {
+          NDX   = 27
+          Fixed = 114
+          Name  = ""
+          }
+         {
+          NDX   = 28
+          Fixed = 115
+          Name  = ""
+          }
+         {
+          NDX   = 29
+          Fixed = 116
+          Name  = ""
+          }
+         {
+          NDX   = 30
+          Fixed = 117
+          Name  = ""
+          }
+         {
+          NDX   = 31
+          Fixed = 118
+          Name  = ""
+          }
+         {
+          NDX   = 32
+          Fixed = 119
+          Name  = ""
+          }
+         {
+          NDX   = 33
+          Fixed = 120
+          Name  = ""
+          }
+         {
+          NDX   = 34
+          Fixed = 121
+          Name  = ""
+          }
+         {
+          NDX   = 35
+          Fixed = 122
+          Name  = ""
+          }
+         {
+          NDX   = 36
+          Fixed = 123
+          Name  = ""
+          }
+         {
+          NDX   = 37
+          Fixed = 124
+          Name  = ""
+          }
+         {
+          NDX   = 38
+          Fixed = 125
+          Name  = ""
+          }
+         {
+          NDX   = 39
+          Fixed = 126
+          Name  = ""
+          }
+         {
+          NDX   = 40
+          Fixed = 127
+          Name  = ""
+          }
+         {
+          NDX   = 41
+          Fixed = 128
+          Name  = ""
+          }
+         {
+          NDX   = 42
+          Fixed = 129
+          Name  = ""
+          }
+         {
+          NDX   = 43
+          Fixed = 130
+          Name  = ""
+          }
+         {
+          NDX   = 44
+          Fixed = 131
+          Name  = ""
+          }
+         {
+          NDX   = 45
+          Fixed = 132
+          Name  = ""
+          }
+         {
+          NDX   = 46
+          Fixed = 133
+          Name  = ""
+          }
+         {
+          NDX   = 47
+          Fixed = 134
+          Name  = ""
+          }
+         {
+          NDX   = 48
+          Fixed = 135
+          Name  = ""
+          }
+         {
+          NDX   = 49
+          Fixed = 136
+          Name  = ""
+          }
+         ]
+        }
+       Debug    = 0
+       }
+      SqlSync {
+       NDX        = 6
+       Fixed      = 149
+       Handle     = 8
+       Enable {
+        *        = "CodedItem"
+        Fixed    = 150
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       DatabaseServer {
+        *        = "CodedItem"
+        Fixed    = 151
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Port {
+        *        = "CodedItem"
+        Fixed    = 152
+        Source   = 0x6
+        .        = 0x307835393900
+        Object   = 0x8
+        .        = 0x41040000B3059980
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       TlsMode {
+        *        = "CodedItem"
+        Fixed    = 153
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Freq {
+        *        = "CodedItem"
+        Fixed    = 154
+        Source   = 0x4
+        .        = 0x30783100
+        Object   = 0x6
+        .        = 0x410400000180
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       FreqMins {
+        *        = "CodedItem"
+        Fixed    = 155
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Delay {
+        *        = "CodedItem"
+        Fixed    = 156
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       LogFile {
+        *        = "CodedItem"
+        Fixed    = 157
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Force {
+        *        = "CodedItem"
+        Fixed    = 158
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       CheckLabels {
+        *        = "CodedItem"
+        Fixed    = 159
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       FireTriggers {
+        *        = "CodedItem"
+        Fixed    = 160
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SyncSecurity {
+        *        = "CodedItem"
+        Fixed    = 161
+        Source   = 0x4
+        .        = 0x30783100
+        Object   = 0x6
+        .        = 0x410400000180
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       SyncEvents {
+        *        = "CodedItem"
+        Fixed    = 162
+        Source   = 0x4
+        .        = 0x30783100
+        Object   = 0x6
+        .        = 0x410400000180
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       Drive {
+        *        = "CodedItem"
+        Fixed    = 163
+        Source   = 0x4
+        .        = 0x30783000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       PrimaryKey = 0
+       LogInit    = 0
+       LogNames {
+        LogNameCount = 0
+        }
+       }
+      ]
+     }
+    Connectors {
+     Fixed = 164
+     Clouds [
+      Fixed = 165
+      ]
+     }
+    USBHost {
+     Fixed = 166
+     Ports [
+      Fixed = 167
+      MemoryStickItem {
+       NDX     = 0
+       Fixed   = 168
+       Enable  = 0
+       Update  = 0
+       Reboot  = 1
+       Config {
+        *        = "CodedItem"
+        Fixed    = 169
+        Source   = 0xc
+        .        = 0x22696D6167652E6369332200
+        Object   = 0x12
+        .        = 0x43040000B6000A696D6167652E6369330080
+        ReqType  = 3
+        ActType  = 3
+        ActFlags = 1
+        }
+       Mode1   = 0
+       Dir1    = 0
+       All1    = 0
+       Source1 = ""
+       Target1 = ""
+       Mode2   = 0
+       Dir2    = 0
+       All2    = 0
+       Source2 = ""
+       Target2 = ""
+       }
+      KeyboardItem {
+       NDX    = 1
+       Fixed  = 170
+       Enable = 0
+       Layout = 0
+       }
+      MouseItem {
+       NDX    = 2
+       Fixed  = 171
+       Enable = 0
+       Rate   = 100
+       Hide   = 30
+       }
+      ]
+     }
+    Rack [
+     Fixed = 172
+     Ports [
+      Fixed = 173
+      NewCommsPortRack {
+       NDX       = 0
+       Fixed     = 288
+       Name      = "<name>"
+       Where     = ""
+       PortTag   = ""
+       Number    = 4
+       PortPhys  = 100
+       PortLog   = 0
+       Binding   = 5
+       DriverID  = 65025
+       Devices [
+        Fixed     = 289
+        {
+         NDX      = 0
+         Fixed    = 290
+         Name     = "Master"
+         Number   = 1
+         Enable {
+          *        = "CodedItem"
+          Fixed    = 293
+          Source   = 0x4
+          .        = 0x30783100
+          Object   = 0x6
+          .        = 0x410400000180
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         Split    = 0
+         Delay    = 0
+         Transact = 1
+         Preempt  = 0
+         Spanning = 1
+         Config {
+          *     = "RackDeviceOptions"
+          Fixed = 294
+          }
+         SysBlocks [
+          Fixed    = 291
+          ]
+         MapBlocks [
+          Fixed    = 292
+          ]
+         Module {
+          *     = "MasterModule"
+          Fixed = 295
+          Firm [
+           Fixed = 296
+           {
+            Fixed  = 20149
+            Handle = 22
+            FirmID = 27
+            }
+           ]
+          }
+         SlotTag  = ""
+         }
+        {
+         NDX      = 1
+         Fixed    = 26197
+         Name     = "Module1"
+         Number   = 2
+         Enable {
+          *        = "CodedItem"
+          Fixed    = 26200
+          Source   = 0x4
+          .        = 0x30783100
+          Object   = 0x6
+          .        = 0x410400000180
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         Split    = 0
+         Delay    = 0
+         Transact = 1
+         Preempt  = 0
+         Spanning = 1
+         Config {
+          *     = "RackDeviceOptions"
+          Fixed = 26201
+          }
+         SysBlocks [
+          Fixed    = 26198
+          ]
+         MapBlocks [
+          Fixed    = 26199
+          ]
+         Module {
+          *     = "DAAO8Module"
+          Output {
+           Data1    = 0
+           Data2    = 0
+           Data3    = 0
+           Data4    = 0
+           Data5    = 0
+           Data6    = 0
+           Data7    = 0
+           Data8    = 0
+           InitData = 116
+           Fixed    = 26203
+           }
+          OutputConfig {
+           Type1     = 4
+           Type2     = 4
+           Type3     = 4
+           Type4     = 4
+           Type5     = 4
+           Type6     = 4
+           Type7     = 4
+           Type8     = 4
+           DP1       = 3
+           DP2       = 3
+           DP3       = 3
+           DP4       = 3
+           DP5       = 3
+           DP6       = 3
+           DP7       = 3
+           DP8       = 3
+           DataLo1   = 0
+           DataLo2   = 0
+           DataLo3   = 0
+           DataLo4   = 0
+           DataLo5   = 0
+           DataLo6   = 0
+           DataLo7   = 0
+           DataLo8   = 0
+           DataHi1   = 10000
+           DataHi2   = 10000
+           DataHi3   = 10000
+           DataHi4   = 10000
+           DataHi5   = 10000
+           DataHi6   = 10000
+           DataHi7   = 10000
+           DataHi8   = 10000
+           OutputLo1 = 0
+           OutputLo2 = 0
+           OutputLo3 = 0
+           OutputLo4 = 0
+           OutputLo5 = 0
+           OutputLo6 = 0
+           OutputLo7 = 0
+           OutputLo8 = 0
+           OutputHi1 = 10000
+           OutputHi2 = 10000
+           OutputHi3 = 10000
+           OutputHi4 = 10000
+           OutputHi5 = 10000
+           OutputHi6 = 10000
+           OutputHi7 = 10000
+           OutputHi8 = 10000
+           DataInit1 = 0
+           DataInit2 = 0
+           DataInit3 = 0
+           DataInit4 = 0
+           DataInit5 = 0
+           DataInit6 = 0
+           DataInit7 = 0
+           DataInit8 = 0
+           InitData  = 0
+           Fixed     = 26204
+           }
+          Fixed = 26202
+          Guid  = {6ACB4589-1774-4FD2-8C43-B72C9459F4C8}
+          Drop  = 0
+          Slot  = 0
+          }
+         SlotTag  = "B0-212"
+         }
+        ]
+       DriverRpc = 0
+       }
+      ]
+     ]
+    Expansion {
+     Fixed = 174
+     Rack [
+      Fixed = 175
+      ]
+     Cascaded {
+      Fixed  = 176
+      Slot   = 0
+      Number = 1000
+      Slots [
+       Fixed  = 177
+       ]
+      Racks [
+       Fixed  = 178
+       ]
+      }
+     Tethered {
+      Fixed  = 179
+      Slot   = 32
+      Number = 1001
+      Slots [
+       Fixed  = 180
+       ]
+      Racks [
+       Fixed  = 181
+       ]
+      HostA  = 8256
+      HostB  = 12352
+      Port   = 0
+      }
+     }
+    LedAlarm  = 0
+    LedOrb    = 0
+    LedHome   = 0
+    }
+   Tags {
+    Fixed     = 182
+    Handle    = 10
+    LogToDisk = 0
+    FileLimit = 60
+    FileCount = 12
+    WithBatch = 0
+    SignLogs  = 0
+    Tags [
+     Fixed     = 183
+     ]
+    LogToPort = 0
+    Drive     = 0
+    Store     = 1
+    }
+   Persist {
+    Fixed = 184
+    }
+   Programs {
+    Fixed         = 185
+    Handle        = 12
+    StoreInFiles  = 0
+    Programs [
+     Fixed         = 186
+     ProgramItem {
+      NDX        = 0
+      Fixed      = 187
+      Handle     = 11
+      Name       = "Program1"
+      Pending    = 0
+      Prot {
+       Fixed = 188
+       Type  = 0
+       Params [
+        Fixed = 189
+        {
+         Fixed = 190
+         Type  = 0
+         Name  = "Param1"
+         }
+        {
+         Fixed = 191
+         Type  = 0
+         Name  = "Param2"
+         }
+        {
+         Fixed = 192
+         Type  = 0
+         Name  = "Param3"
+         }
+        {
+         Fixed = 193
+         Type  = 0
+         Name  = "Param4"
+         }
+        {
+         Fixed = 194
+         Type  = 0
+         Name  = "Param5"
+         }
+        {
+         Fixed = 195
+         Type  = 0
+         Name  = "Param6"
+         }
+        ]
+       }
+      BkGnd      = 0
+      Comms      = 0
+      Timeout    = 300
+      Run        = 0
+      Private    = 0
+      DebugMode  = 0
+      DebugFlags = 15
+      }
+     ]
+    AutoCast      = 0
+    PrecFix       = 1
+    OptLevel      = 2
+    DebugEnable   = 0
+    DebugPrograms = 1
+    DebugActive   = 1
+    DebugPassive  = 0
+    DebugFlags    = 15
+    }
+   Web {
+    Fixed         = 196
+    Pages [
+     Fixed         = 197
+     ]
+    Handle        = 13
+    Enable        = 1
+    DbCrc         = 2021424616
+    DbTime        = 1769542626
+    Opts {
+     Fixed        = 198
+     Advanced     = 0
+     Tls          = 1
+     Port         = 443
+     SendTimeout  = 30
+     RecvTimeout  = 30
+     CertSource   = 0
+     CertFile     = ""
+     CertName     = ""
+     CertPass     = ""
+     CompReply    = 1
+     MaxKeep      = 2
+     AuthMethod   = 0
+     HttpMethod   = 1
+     Realm        = "Crimson Web Server"
+     HttpRedirect = 1
+     SockCount    = 10
+     IdleTimeout  = 60
+     InitTimeout  = 30
+     SessTimeout  = 5
+     }
+    CustStore     = 2
+    CustHome      = 0
+    CustIcon      = 0
+    CustLogon     = 0
+    CustCss       = 0
+    CustJs        = 0
+    RemoteView    = 1
+    RemoteCtrl    = 0
+    RemoteZoom    = 0
+    RemoteFact    = 2
+    RemoteBits    = 16
+    RemoteSec     = 3221225472
+    LogsView      = 0
+    LogsBatches   = 0
+    LogsSec       = 3221225472
+    UserSite      = 0
+    UserMenu      = 1
+    UserDelay     = 5
+    UserSec       = 3221225472
+    UserRoot      = 0
+    SystemPages   = 0
+    SystemConsole = 0
+    SystemCapture = 0
+    SystemJump    = 1
+    SystemSec     = 3221225472
+    Source        = 1
+    Local         = 0
+    Restrict      = 0
+    SecMask       = 0
+    SecAddr       = 0
+    SameOrigin    = 1
+    }
+   Log {
+    Fixed       = 199
+    Handle      = 14
+    EnableBatch = 0
+    EnableSets  = 0
+    BatchCount  = 10
+    CSVEncode   = 0
+    Logs [
+     Fixed       = 201
+     ]
+    BatchDrive  = 0
+    BatchStore  = 1
+    }
+   Secure {
+    Fixed     = 202
+    Handle    = 15
+    Users [
+     Fixed     = 203
+     ]
+    DefMapped = 2684354560
+    DefLocal  = 2684354560
+    DefPage   = 2147483648
+    LogMapped = 0
+    LogLocal  = 0
+    LogEnable = 0
+    FileLimit = 60
+    FileCount = 24
+    WithBatch = 0
+    SignLogs  = 0
+    UserTime  = 600
+    UserClear = 0
+    CheckTime = 5
+    Drive     = 0
+    Store     = 1
+    }
+   Lang {
+    Fixed   = 204
+    Handle  = 16
+    Lang    = 0
+    System  = 257
+    Global  = 1
+    LocSep  = 1
+    LexMode = 0
+    Server  = 0
+    AppID   = ""
+    Langs [
+     Fixed   = 205
+     {
+      Fixed = 206
+      Lang  = 0
+      Code  = "en"
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 207
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 208
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 209
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 210
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 211
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 212
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 213
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 214
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 215
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 216
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 217
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 218
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 219
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 220
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 221
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 222
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 223
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 224
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     {
+      Fixed = 225
+      Lang  = 1
+      Code  = ""
+      Keyb  = 0
+      Num   = 0
+      Upper = 0
+      }
+     ]
+    }
+   Color {
+    Fixed    = 226
+    Custom00 = 12696
+    Select00 = 5
+    Custom01 = 13068
+    Select01 = 5
+    Custom02 = 24972
+    Select02 = 5
+    Custom03 = 13080
+    Select03 = 5
+    Custom04 = 25356
+    Select04 = 5
+    Custom05 = 24984
+    Select05 = 5
+    Custom06 = 0
+    Select06 = 0
+    Custom07 = 0
+    Select07 = 0
+    Custom08 = 0
+    Select08 = 0
+    Custom09 = 0
+    Select09 = 0
+    Custom10 = 0
+    Select10 = 0
+    Custom11 = 0
+    Select11 = 0
+    Custom12 = 0
+    Select12 = 0
+    Custom13 = 0
+    Select13 = 0
+    Custom14 = 0
+    Select14 = 0
+    Custom15 = 0
+    Select15 = 0
+    Custom16 = 0
+    Select16 = 0
+    Custom17 = 0
+    Select17 = 0
+    Custom18 = 0
+    Select18 = 0
+    Custom19 = 0
+    Select19 = 0
+    Custom20 = 0
+    Select20 = 0
+    Custom21 = 0
+    Select21 = 0
+    Custom22 = 0
+    Select22 = 0
+    Custom23 = 0
+    Select23 = 0
+    }
+   Control {
+    Fixed  = 229
+    Handle = 17
+    }
+   Sql {
+    Fixed    = 230
+    Handle   = 18
+    Enable   = 0
+    Server {
+     *        = "CodedItem"
+     Fixed    = 232
+     Source   = 0x4
+     .        = 0x30783000
+     Object   = 0x6
+     .        = 0x410400000080
+     ReqType  = 1
+     ActType  = 1
+     ActFlags = 1
+     }
+    Port     = 1433
+    TlsMode  = 0
+    Connect  = 0
+    User     = ""
+    Pass     = ""
+    Queries [
+     Fixed    = 231
+     ]
+    Validate = 0
+    }
+   DevCon {
+    Fixed = 233
+    Model = "da70|0g|640x480|g=4"
+    HConfig {
+     Fixed  = 234
+     Handle = 4294967295
+     Config = "{"atype":"h","base":{"port1":0,"port2":1,"port3":1},"general":{"format":"3145792"
+     .      = "0","group":"4"},"modules":{"mlist":[{"order":0,"type":"212"},{"order":1,"type":""
+     .      = ""},{"order":2,"type":""},{"order":3,"type":""},{"order":4,"type":""},{"order":5,"
+     .      = ""type":""},{"order":6,"type":""},{"order":7,"type":""},{"order":8,"type":""},{"o"
+     .      = "rder":9,"type":""}]},"sleds":{"slist":[{"order":"0","type":"0"},{"order":"1","ty"
+     .      = "pe":"0"},{"order":"2","type":"0"}]},"tunnels":{},"usbtty":{"plist":[]}}"
+     Enable = 1
+     Active = "{"atype":"h","base":{"port1":0,"port2":1,"port3":1},"general":{"format":"3145792"
+     .      = "0","group":"4"},"modules":{"mlist":[{"order":0,"type":"212"},{"order":1,"type":""
+     .      = ""},{"order":2,"type":""},{"order":3,"type":""},{"order":4,"type":""},{"order":5,"
+     .      = ""type":""},{"order":6,"type":""},{"order":7,"type":""},{"order":8,"type":""},{"o"
+     .      = "rder":9,"type":""}]},"sleds":{"slist":[{"order":"0","type":"0"},{"order":"1","ty"
+     .      = "pe":"0"},{"order":"2","type":"0"}]},"tunnels":{},"usbtty":{"plist":[]}}"
+     Level  = 1
+     }
+    PConfig {
+     Fixed  = 235
+     Handle = 4294967294
+     Config = "{"atype":"p","set":{"keys":[{"name":"addr","value":"10.80.14.215"}]}}"
+     Enable = 1
+     }
+    SConfig {
+     Fixed  = 236
+     Handle = 4294967293
+     Config = "{"atype":"s","g3link":{"net":{"enable":"1","port":"789","timeout":"30"}},"net":{"
+     .      = ""faces":{"eth0":{"address":"192.168.1.20","checkBurst":"0","checkDelay":"0","che"
+     .      = "ckFailure":"0","checkPeriod":"0","checkSuccess":"0","dhcpGate":"1","dhcpServerGa"
+     .      = "te":"1","fast":"0","full":"0","gateway":"192.168.1.1","metric":"0","mode":"1","m"
+     .      = "tu":"1500","netmask":"255.255.255.0","trust":"1","vlans":"","vrrpAddress":"192.1"
+     .      = "68.1.250","vrrpGroup":"1","vrrpNotify":"1","vrrpPriority":"100"},"eth1":{"addres"
+     .      = "s":"192.168.222.222","aliases":[],"checkBurst":"0","checkDelay":"0","checkFailur"
+     .      = "e":"0","checkPeriod":"0","checkSuccess":"0","dhcpGate":"1","dhcpServerEnd":"192."
+     .      = "168.222.200","dhcpServerGate":"1","dhcpServerStart":"192.168.222.100","fast":"0""
+     .      = ","full":"0","metric":"0","mode":"2","mtu":"1500","netmask":"255.255.255.0","trus"
+     .      = "t":"1","vlans":"","vrrpAddress":"192.168.222.250","vrrpGroup":"1","vrrpNotify":""
+     .      = "1","vrrpPriority":"100"},"usb0":{"mode":"1"}},"firewall":{"custom":{},"filter":{"
+     .      = "},"forward":{},"inbound":{},"lists":{},"nat":{}},"ident":{"autocert":"1","certda"
+     .      = "ta":"","certpass":"","certpriv":"","flash":"1","identifier":"1","limit":"1","llm"
+     .      = "nr":"1","mdns":"1","name":"","xip1":"","xname1":""},"resolver":{"dns1":"8.8.8.8""
+     .      = ","dns2":"8.8.4.4","hosts":[],"mode":"1","suffix":""},"routing":{"enable":"1","ro"
+     .      = "utes":[]},"tunnels":{}},"security":{"client":{},"roots":{},"server":{}},"service"
+     .      = "s":{"dhcpRelay":{},"dhcpServer":{},"dog":{},"ftps":{},"location":{},"serialServe"
+     .      = "r":{},"sms":{},"smtp":{"casrc":"2","port":"25"},"snmp":{},"svm":{},"syslog":{},""
+     .      = "time":{"cell":{},"gps":{"mode":"0","period":"60"},"ntp":{"mode":"1","ntp1":"132."
+     .      = "163.96.1","ntp2":"129.6.15.28","period":"240"},"tz":{"mode":"1"}},"tlsClient":{}"
+     .      = ","tlsServer":{},"web":{}},"usb":{"mouse":{},"thumb":{}}}"
+     Enable = 1
+     }
+    UConfig {
+     Fixed  = 237
+     Handle = 4294967292
+     Config = "{"atype":"u","set":{"users":[{"access":"0","ftp":"0","name":"Administrator","noe"
+     .      = "xp":"1","pass":"quotable-chevy-9898","time":1769542738,"user":"Admin"}]}}"
+     Enable = 0
+     }
+    }
+   UI {
+    Fixed      = 238
+    Handle     = 21
+    Scratch [
+     Fixed      = 239
+     DispPage {
+      NDX     = 0
+      Fixed   = 240
+      Handle  = 19
+      Name    = "Scratchpad"
+      Size    = 640,480
+      List [
+       Fixed   = 241
+       ]
+      Events [
+       Fixed   = 242
+       ]
+      Props {
+       Fixed      = 243
+       Desc       = ""
+       Back {
+        Fixed    = 244
+        Source   = 0x7
+        .        = 0x30783030303000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       AutoEntry  = 0
+       EntryOrder = 0
+       NoBack     = 0
+       Timeout    = 0
+       Update     = 0
+       PopAlign   = 0
+       PopAlignH  = 2
+       PopAlignV  = 2
+       PopMaster  = 1
+       PopKeypad  = 0
+       Sec {
+        Fixed   = 245
+        Access  = 3221225472
+        Logging = 3
+        }
+       }
+      Private = 0
+      }
+     ]
+    Pages [
+     Fixed      = 246
+     DispPage {
+      NDX     = 0
+      Fixed   = 247
+      Handle  = 20
+      Name    = "Page1"
+      Size    = 640,480
+      List [
+       Fixed   = 248
+       PrimRubyTextBox {
+        Fixed        = 1014
+        RealRect     = 253,228,386,252
+        TextRect     = 253,228,386,252
+        TextItem {
+         *          = "PrimText"
+         Fixed      = 1023
+         AlignH     = 1
+         AlignV     = 2
+         Lead       = 0
+         Font       = 21
+         MoveDir    = 0
+         MoveStep   = 2
+         Margin     = 0,0,0,0
+         Text {
+          *        = "CodedText"
+          Fixed    = 1026
+          Source   = 0xe
+          .        = 0x2248656C6C6F20576F726C642200
+          Object   = 0x14
+          .        = 0x43040000B6000C48656C6C6F20576F726C640080
+          ReqType  = 3
+          ActType  = 3
+          ActFlags = 1
+          }
+         Color {
+          Fixed    = 1024
+          Source   = 0x7
+          .        = 0x30783746464600
+          Object   = 0x8
+          .        = 0x41040000B37FFF80
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         Shadow {
+          Fixed    = 1025
+          Source   = 0x1
+          .        = 0x00
+          Object   = 0x0
+          .        = 0x
+          ReqType  = 1
+          ActType  = 0
+          }
+         }
+        Fill {
+         Fixed   = 1015
+         Pattern = 0
+         Color1 {
+          Fixed    = 1016
+          Source   = 0x7
+          .        = 0x30783631384300
+          Object   = 0x8
+          .        = 0x41040000B3618C80
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         Color2 {
+          Fixed    = 1017
+          Source   = 0x7
+          .        = 0x30783746464600
+          Object   = 0x8
+          .        = 0x41040000B37FFF80
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         Mode    = 0
+         Color3 {
+          Fixed    = 1018
+          Source   = 0x7
+          .        = 0x30783331384300
+          Object   = 0x8
+          .        = 0x41040000B3318C80
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         }
+        Edge {
+         Fixed     = 1019
+         Pattern   = 2
+         Color1 {
+          Fixed    = 1020
+          Source   = 0x7
+          .        = 0x30783746464600
+          Object   = 0x8
+          .        = 0x41040000B37FFF80
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         Color2 {
+          Fixed    = 1021
+          Source   = 0x7
+          .        = 0x30783631384300
+          Object   = 0x8
+          .        = 0x41040000B3618C80
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         Width     = 0
+         Edge      = 0
+         Join      = 1
+         TrimWidth = 0
+         TrimMode  = 0
+         TrimColor {
+          Fixed    = 1022
+          Source   = 0x7
+          .        = 0x30783344454600
+          Object   = 0x8
+          .        = 0x41040000B33DEF80
+          ReqType  = 1
+          ActType  = 1
+          ActFlags = 1
+          }
+         }
+        }
+       ]
+      Events [
+       Fixed   = 249
+       ]
+      Props {
+       Fixed      = 250
+       Desc       = ""
+       Back {
+        Fixed    = 251
+        Source   = 0x7
+        .        = 0x30783030303000
+        Object   = 0x6
+        .        = 0x410400000080
+        ReqType  = 1
+        ActType  = 1
+        ActFlags = 1
+        }
+       AutoEntry  = 0
+       EntryOrder = 0
+       NoBack     = 0
+       Timeout    = 0
+       Update     = 0
+       PopAlign   = 0
+       PopAlignH  = 2
+       PopAlignV  = 2
+       PopMaster  = 1
+       PopKeypad  = 0
+       Sec {
+        Fixed   = 252
+        Access  = 3221225472
+        Logging = 3
+        }
+       }
+      Private = 0
+      }
+     ]
+    Images {
+     Fixed    = 253
+     SymLevel = 1
+     Include  = 0
+     RelMode  = 1
+     CfPath   = "C:\ProgramData\Red Lion Controls\Crimson\3.2\CF"
+     Files [
+      Fixed    = 254
+      ]
+     Views [
+      Fixed    = 255
+      ]
+     }
+    Fonts {
+     Fixed = 256
+     Fonts [
+      Fixed = 257
+      ]
+     }
+    Patterns {
+     Fixed = 258
+     List  = 0x100
+     .     = 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000
+     .     = 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000
+     .     = 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000
+     .     = 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000
+     .     = 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000
+     .     = 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000
+     .     = 0x00000000000000000000000000000000
+     }
+    Events [
+     Fixed      = 259
+     ]
+    TimeLock   = 30
+    TimePad    = 30
+    PadSize    = 0
+    PadLayout  = 0
+    PadNumeric = 0
+    PadString  = 0
+    ShowNext   = 1
+    AutoEntry  = 0
+    EntryOrder = 0
+    TwoMulti   = 1
+    TwoFlag    = 1
+    TwoNumeric = 1
+    Beeper     = 0
+    PopAlignH  = 2
+    PopAlignV  = 1
+    GMC1       = 1
+    LedAlarm   = 0
+    LedOrb     = 0
+    LedHome    = 0
+    PopKeypad  = 0
+    TimeoutDisp {
+     *        = "CodedItem"
+     Fixed    = 260
+     Source   = 0x4
+     .        = 0x30783000
+     Object   = 0x6
+     .        = 0x410400000080
+     ReqType  = 1
+     ActType  = 1
+     ActFlags = 1
+     }
+    }
+   Level    = 3
+   }
+  }
+ }
