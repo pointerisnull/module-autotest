@@ -4,7 +4,8 @@ DARK_MODE = """
     }
     
     QWidget {
-        background-color: #292929;
+        /*background-color: #292929;*/
+        background-color: rgba(41, 41, 41, 100); 
     }
 
     QLabel {
@@ -83,6 +84,100 @@ DARK_MODE = """
     QLineEdit:focus {
         border: 1px solid #0078D7;
     }
+
+    QDialog {
+        background-color: #1E1E1E;
+    }
+
+
+    QComboBox {
+        background-color: #333333;
+        border: 1px solid #444444;
+        border-radius: 8px;
+        padding: 5px;
+        color: #E0E0E0;
+    }
+
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 25px;
+        border-left: none;
+        border-top-right-radius: 8px; 
+        border-bottom-right-radius: 8px;
+    }
+
+    QComboBox::down-arrow {
+        image: none;  /* Optional: replace with custom arrow or keep default */
+        border-top: 5px solid #E0E0E0; /* Simple CSS Arrow */
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        margin-top: 2px;
+    }
+
+    QComboBox QAbstractItemView {
+        background-color: #2D2D2D;
+        color: #E0E0E0;
+        border: 1px solid #0078D7;
+        selection-background-color: #0078D7; /* Blue background for selected item */
+        selection-color: #FFFFFF; /* White text for selected item */
+        outline: none;
+    }
+
+    QDialog QLabel {
+        color: #E0E0E0;
+        font-size: 16px;
+    }
+
+    QScrollBar:vertical {
+        border: none;
+        background: #2D2D2D;
+        width: 10px;
+        margin: 0px;
+    }
+
+    QScrollBar::handle:vertical {
+        background: #444444;
+        min-height: 20px;
+        border-radius: 5px;
+    }
+    QListWidget {
+        /*background-color: #333333;  Dark background */
+        background-color: rgba(51, 51, 51, 100); 
+        border: 1px solid #444444;
+        color: #E0E0E0;
+        outline: 0; /* Removes the dotted focus line */
+    }
+    
+    QListWidget::item:selected {
+        background-color: #0078D7; /* Your Blue Highlight */
+        color: white;
+    }
+    
+    QWidget:disabled {
+        color: #606060; 
+    }
+
+    QLineEdit:disabled, QComboBox:disabled, QPushButton:disabled, QListWidget:disabled {
+        background-color: #222222;
+        color: #606060;
+        border: 1px solid #333333;
+    }
+
+    QGroupBox {
+        color: #E0E0E0; 
+        /*background-color: rgba(0, 0, 0, 100);*/ 
+    }   
+
+    QGroupBox:disabled {
+        color: #606060;
+    }
+
+    QFormLayout {
+        margin-top: 20px;
+        border: 1px solid #444444;
+    }
+
 """
 
 LIGHT_MODE = """
@@ -91,7 +186,8 @@ LIGHT_MODE = """
     }
     
     QWidget {
-        background-color: #F8F9FA;
+        /*background-color: #F8F9FA;*/
+        background-color: rgba(255, 255, 255, 150)
     }
 
     QLabel {
@@ -152,5 +248,83 @@ LIGHT_MODE = """
     QMenu::item:selected {
         background-color: #409EFF;
         color: #FFFFFF;
+    }
+
+    QDialog {
+        background-color: #FDFDFD;
+    }
+
+    QComboBox {
+        background-color: #FFFFFF;
+        border: 1px solid #DCDFE6;
+        border-radius: 8px;
+        padding: 4px;
+        color: #2D3436;
+    }
+
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 25px;
+        border-left: none; 
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    QComboBox::down-arrow {
+        image: none;
+        border-top: 5px solid #606266;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        margin-top: 2px;
+    }
+
+    QComboBox:on, QComboBox:focus {
+        border: 2px solid #409EFF; /* Soft Blue border when active */
+    }
+
+    QComboBox QAbstractItemView {
+        background-color: #FFFFFF;
+        color: #2D3436;
+        border: 1px solid #409EFF;
+        selection-background-color: #409EFF; /* Soft Blue highlight */
+        selection-color: #FFFFFF;
+        outline: none;
+    }
+
+    QDialog QLabel {
+        color: #2D3436;
+        font-size: 16px;
+    }
+
+    QScrollBar:vertical {
+        border: none;
+        background: #F0F2F5;
+        width: 10px;
+    }
+
+    QScrollBar::handle:vertical {
+        background: #C0C4CC;
+        min-height: 20px;
+        border-radius: 5px;
+    }
+    
+    QWidget:disabled {
+        color: #B0B0B0;
+    }
+
+    QLineEdit:disabled, QComboBox:disabled, QPushButton:disabled {
+        background-color: #F7F7F7;
+        color: #B0B0B0;
+        border: 1px solid #EAEAEA;
+    }
+
+    QGroupBox:disabled {
+        border: 1px solid #EAEAEA;
+        color: #B0B0B0;
+    }
+
+    QListWidget {
+        background-color: rgba(248, 249, 250, 200)
     }
 """

@@ -1,4 +1,9 @@
 settings/device_config.csv
 settings/pinout.csv
+/src/common/__pycache__
+/src/core/__pycache__
+/src/gui/__pycache__
+/src/objects/__pycache__
 /src/utils/__pycache__
+config/*
 venv/

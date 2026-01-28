@@ -57,3 +57,37 @@ class ContainerWithBackground(QWidget):
         
         painter.drawPixmap(x, y, scaled_pixmap)
         super().paintEvent(event)
+
+# Parent class for each configurable module pin
+class PinOption():
+    def __init__(self, name="Generic Option"):
+        self.name = name
+        self.init_layout()
+    
+    def init_layout(self):
+            # Create the rightside window
+            #self.container = ContainerWithBackground("./assets/hms_logo.png")
+            self.container = QWidget() #ContainerWithBackground("./assets/hms_logo.png")
+            layout = QVBoxLayout(self.container)
+            #layout.setContentsMargins(0, 10, 0, 10)
+
+            # Group Box for header
+            group = QGroupBox()
+            group.setCheckable(True)
+            group.setTitle("Enable pin for testing")
+            form = QFormLayout()
+            
+            # setup elements here
+            self.populate(form)
+
+            group.setLayout(form)
+            layout.addWidget(group)
+            #layout.addStretch() # Push everything to the top 
+    
+    def get_contents(self):
+        return self.container
+    
+    def populate(self, form):
+        widget = QLineEdit()
+        field = "Default Class: "
+        form.addRow(field + ":", widget)

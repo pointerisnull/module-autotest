@@ -1,3 +1,5 @@
+import os
+import sys
 
 class ConfigHandler():
     def __init__(self, path="./config/"):
@@ -5,8 +7,22 @@ class ConfigHandler():
         self.path=path
         self.has_changed = False
 
-    def create_config(self, name):
-        print(f"Created configuration for {name}")
+    def create_config(self, name, overwrite=True, module_type=""):
+        # Create config file
+        directory = os.path.dirname(self.path)
+        if directory and not os.path.exists(directory):
+            os.makedirs(directory)
+
+        if overwrite:
+            # 'w' will overwrite without complaining
+            option = 'w'
+        else:
+            # 'x' will throw FileExistsError if the file is already there
+            option = 'x'
+
+        with open(os.path.join(self.path, name) , option) as f:
+            pass  # Do nothing, just close it immediately (for now)
+
         self.config = name
 
     def set_config(self, name):
@@ -15,9 +31,24 @@ class ConfigHandler():
 
     def get_config(self):
         return self.config
-    
+
     def get_path(self):
         return self.path
-    
+
+    # Return a list of all configurations present
+    def list_configs(self):
+        if not os.path.exists(self.path):
+            return []
+        files = [
+            f for f in os.listdir(self.path) 
+            if os.path.isfile(os.path.join(self.path, f))
+        ]
+        return files
+
     def open_config(self, path):
         print(f"Opening configuration at {path}")
+
+if __name__ == "__main__":
+    conf = ConfigHandler()
+    conf.create_config("test2", overwrite=False)
+    print(conf.list_configs())
