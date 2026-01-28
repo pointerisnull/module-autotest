@@ -83,7 +83,7 @@ class MainWindow(QMainWindow):
 
         about_action = QAction("&About", self)
         about_action.setShortcut("Ctrl+A")
-        about_action.triggered.connect(lambda: self.popup.about(self, "About", "HMS Autotester version 0.0.0"))
+        about_action.triggered.connect(lambda: self.popup.about(self, "About", "HMS Autotester version 0.1"))
 
         run_action = QAction("&Run Hardware Config", self)
         run_action.setShortcut("F5")

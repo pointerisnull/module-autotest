@@ -69,7 +69,6 @@ class PinOption():
             #self.container = ContainerWithBackground("./assets/hms_logo.png")
             self.container = QWidget() #ContainerWithBackground("./assets/hms_logo.png")
             layout = QVBoxLayout(self.container)
-            #layout.setContentsMargins(0, 10, 0, 10)
 
             # Group Box for header
             group = QGroupBox()
