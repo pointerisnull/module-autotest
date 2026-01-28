@@ -4,7 +4,8 @@ DARK_MODE = """
     }
     
     QWidget {
-        background-color: #292929;
+        /*background-color: #292929;*/
+        background-color: rgba(41, 41, 41, 100); 
     }
 
     QLabel {
@@ -90,11 +91,11 @@ DARK_MODE = """
 
 
     QComboBox {
-    background-color: #333333;
-    border: 1px solid #444444;
-    border-radius: 8px;
-    padding: 5px;
-    color: #E0E0E0;
+        background-color: #333333;
+        border: 1px solid #444444;
+        border-radius: 8px;
+        padding: 5px;
+        color: #E0E0E0;
     }
 
     QComboBox::drop-down {
@@ -140,6 +141,43 @@ DARK_MODE = """
         min-height: 20px;
         border-radius: 5px;
     }
+    QListWidget {
+        /*background-color: #333333;  Dark background */
+        background-color: rgba(51, 51, 51, 100); 
+        border: 1px solid #444444;
+        color: #E0E0E0;
+        outline: 0; /* Removes the dotted focus line */
+    }
+    
+    QListWidget::item:selected {
+        background-color: #0078D7; /* Your Blue Highlight */
+        color: white;
+    }
+    
+    QWidget:disabled {
+        color: #606060; 
+    }
+
+    QLineEdit:disabled, QComboBox:disabled, QPushButton:disabled, QListWidget:disabled {
+        background-color: #222222;
+        color: #606060;
+        border: 1px solid #333333;
+    }
+
+    QGroupBox {
+        color: #E0E0E0; 
+        /*background-color: rgba(0, 0, 0, 100);*/ 
+    }   
+
+    QGroupBox:disabled {
+        color: #606060;
+    }
+
+    QFormLayout {
+        margin-top: 20px;
+        border: 1px solid #444444;
+    }
+
 """
 
 LIGHT_MODE = """
@@ -148,7 +186,8 @@ LIGHT_MODE = """
     }
     
     QWidget {
-        background-color: #F8F9FA;
+        /*background-color: #F8F9FA;*/
+        background-color: rgba(255, 255, 255, 150)
     }
 
     QLabel {
@@ -268,5 +307,24 @@ LIGHT_MODE = """
         background: #C0C4CC;
         min-height: 20px;
         border-radius: 5px;
+    }
+    
+    QWidget:disabled {
+        color: #B0B0B0;
+    }
+
+    QLineEdit:disabled, QComboBox:disabled, QPushButton:disabled {
+        background-color: #F7F7F7;
+        color: #B0B0B0;
+        border: 1px solid #EAEAEA;
+    }
+
+    QGroupBox:disabled {
+        border: 1px solid #EAEAEA;
+        color: #B0B0B0;
+    }
+
+    QListWidget {
+        background-color: rgba(248, 249, 250, 200)
     }
 """

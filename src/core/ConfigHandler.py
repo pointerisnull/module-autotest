@@ -25,7 +25,6 @@ class ConfigHandler():
 
         self.config = name
 
-
     def set_config(self, name):
         self.config = name
         self.open_config(self.path+self.config)

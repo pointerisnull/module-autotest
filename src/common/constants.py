@@ -4,7 +4,7 @@ DEFAULT_DOWNLOAD_PORT = 789
 
 # Crimson user auth
 CRIMSON_USER = "admin"
-CRIMSION_PASS = "password"
+CRIMSON_PASS = "password"
 
 BACKOFF_BASE = 2
 
@@ -27,4 +27,4 @@ DEFAULT_WIDTH = 800
 DEFAULT_HEIGHT = 600
 
 # Modules
-MODULES = ['8DI/8DO', '2UIN MIX', '4UIN MIX', '6UIN']
+MODULES = ['8DI/8DO', '8DI/8RO', '2UIN MIX', '4UIN MIX', '6UIN', 'DA Strain Gage']
