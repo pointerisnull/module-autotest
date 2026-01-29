@@ -69,12 +69,12 @@ class PinOption():
             #self.container = ContainerWithBackground("./assets/hms_logo.png")
             self.container = QWidget() #ContainerWithBackground("./assets/hms_logo.png")
             layout = QVBoxLayout(self.container)
-            #layout.setContentsMargins(0, 10, 0, 10)
 
             # Group Box for header
             group = QGroupBox()
-            group.setCheckable(True)
-            group.setTitle("Enable pin for testing")
+            if self.name != "Miscellaneous Settings":
+                group.setCheckable(True)
+                group.setTitle("Enable pin for testing")
             form = QFormLayout()
             
             # setup elements here
