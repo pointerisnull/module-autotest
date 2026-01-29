@@ -174,8 +174,18 @@ DARK_MODE = """
     }
 
     QFormLayout {
+        font-size: 12px;
         margin-top: 20px;
         border: 1px solid #444444;
+    }
+
+    QCheckBox {
+        color: #E0E0E0;
+        selection-color: #D0D0D0;
+    }
+
+    QLabel {
+        color: #E0E0E0;
     }
 
 """
