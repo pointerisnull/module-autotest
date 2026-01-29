@@ -171,7 +171,7 @@ class PopupManager:
         if "Empty" not in options:
             options.insert(0, "Empty")
     
-        for i in range(4):
+        for i in range(constants.MODULE_SLOTS):
             combo = QComboBox()
             combo.addItems(options)
             

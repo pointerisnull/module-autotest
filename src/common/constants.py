@@ -22,12 +22,15 @@ TC_TYPE_R = 'r'
 TC_TYPE_S = 's'
 TC_TYPE_T = 't'
 
+TC_TYPES = [TC_TYPE_B, TC_TYPE_E, TC_TYPE_J, TC_TYPE_K, TC_TYPE_N, TC_TYPE_N, TC_TYPE_R, TC_TYPE_S, TC_TYPE_T]
+
 # GUI Defaults
 DEFAULT_WIDTH = 800
 DEFAULT_HEIGHT = 600
 
 # Modules
-MODULES = ['8DI/8DO', '8DI/8RO', '2UIN MIX', '4UIN MIX', '6UIN', 'DA Strain Gage']
+MODULES = ['8DI/8DO', '8DI/8RO', '2UIN MIX', '4UIN MIX', '6UIN', 'Single PID', 'Dual PID', 'DA Strain Gage', 'High Speed Rate Counter']
+MODULE_SLOTS = 4
 
 # Default Thresholds
 # Digital

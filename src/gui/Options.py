@@ -2,7 +2,6 @@ from PyQt5.QtWidgets import *
 import PyQt5.QtCore as core
 
 from gui.Elements import PinOption
-from gui.Elements import TextBox
 from common.constants import *
 
 # All IO options that can be configured
@@ -188,6 +187,18 @@ class ThermocoupleInput(PinOption):
         header1 = QLabel()
         header1.setText("<b>RTD/TC Input:</b>")
         form.addRow(header1)
+        '''
+        tc_type, tc_type_okay = QInputDialog.getItem(
+                self, 
+                "Module Type", 
+                "Select module for this config:", 
+                TC_TYPES, 
+                0, 
+                False
+            )
+        '''
+
+
 
 class ExcitationInput(PinOption):
     def populate(self, form):
@@ -266,3 +277,19 @@ def get_module_io(module_type, io_list, options_stack):
             io_tab = DigitalMix(f"DI/DO ({i})")
             io_list.addItem(f"DI/DO ({i})")
             options_stack.addWidget(io_tab.get_contents())
+
+    # 6uin
+    if module_type == MODULES[4]:
+        for i in range(6):
+            tc_tab = ThermocoupleInput(f"TC/RTD+ ({i+1})")
+            ext_tab = ExcitationInput(f"RTD+EXC ({i+1})")
+            volt_tab = AnalogIn(f"0-10v ({i+1})")
+            curr_tab = AnalogIn(f"4-20mA ({i+1})")
+            io_list.addItem(f"TC/RTD+ ({i+1})")
+            io_list.addItem(f"RTD+EXC ({i+1})")
+            io_list.addItem(f"0-10v ({i+1})")
+            io_list.addItem(f"4-20mA ({i+1})")
+            options_stack.addWidget(tc_tab.get_contents())
+            options_stack.addWidget(ext_tab.get_contents())
+            options_stack.addWidget(volt_tab.get_contents())
+            options_stack.addWidget(curr_tab.get_contents())
