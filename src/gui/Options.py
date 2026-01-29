@@ -6,6 +6,20 @@ from gui.Elements import TextBox
 from common.constants import *
 
 # All IO options that can be configured
+class Miscellaneous(PinOption):
+    def populate(self, form):
+        form.setVerticalSpacing(5)
+        header1 = QLabel()
+        header1.setTextFormat(core.Qt.RichText)#"text-decoration: underline;")
+        header1.setText("<b>Miscellaneous Settings</b>")
+        form.addRow(header1)
+        io_crim = QCheckBox("Compare real values with Crimson tag values")
+        io_crim.setChecked(True)
+        form.addRow(io_crim)
+        io_iter = QLineEdit()
+        io_iter.setText("1")
+        form.addRow("Test iterations", io_iter)
+
 class DigitalIn(PinOption):
     def populate(self, form):
         form.setVerticalSpacing(5)
@@ -45,7 +59,7 @@ class DigitalIn(PinOption):
 
         header2 = QLabel()
         header2.setTextFormat(core.Qt.RichText)
-        header2.setText("<b>IO Validation:</b>")
+        header2.setText("<b>Input Validation:</b>")
         form.addRow(header2)
         io_real = QCheckBox("Validate physical high/low")
         io_real.setChecked(True)
@@ -59,9 +73,19 @@ class DigitalIn(PinOption):
 
 class DigitalOut(PinOption):
     def populate(self, form):
-        widget = QLineEdit()
-        field = "Output"
-        form.addRow(field + ":", widget)
+        header1 = QLabel()
+        header1.setTextFormat(core.Qt.RichText)
+        header1.setText("<b>Output Validation:</b>")
+        form.addRow(header1)
+        io_real = QCheckBox("Validate physical high/low")
+        io_real.setChecked(True)
+        form.addRow(io_real)
+        io_crim = QCheckBox("Validate crimson high/low")
+        io_crim.setChecked(True)
+        form.addRow(io_crim)
+        io_inv = QCheckBox("Inverse Logic")
+        io_inv.setChecked(True)
+        form.addRow(io_inv)
 
 # Acts as both input and output
 class DigitalMix(PinOption):
@@ -76,9 +100,26 @@ class AnalogIn(PinOption):
         field = "Field"
         form.addRow(field + ":", widget)
 
-
 class AnalogOut(PinOption):
     def populate(self, form):
         widget = QLineEdit()
         field = "Field"
         form.addRow(field + ":", widget)
+
+def get_module_io(module_type, io_list, options_stack):
+    #TODO
+    # THIS IS TERRIBLE, PLEASE REWRITE LATER!!!
+    misc_tab = Miscellaneous("Miscellaneous Settings")
+    io_list.addItem("Miscellaneous Settings")
+    options_stack.addWidget(misc_tab.get_contents())
+
+    #8DI/8DO
+    if module_type == MODULES[0]:
+        for i in range(1, 9):
+            io_tab = DigitalIn(f"DI_{i}")
+            io_list.addItem(f"DI_{i}")
+            options_stack.addWidget(io_tab.get_contents())
+        for i in range(1, 9):
+            io_tab = DigitalOut(f"DO_{i}")
+            io_list.addItem(f"DO_{i}")
+            options_stack.addWidget(io_tab.get_contents())

@@ -1,13 +1,14 @@
 import os
-import sys
+from common.constants import *
 
 class ConfigHandler():
     def __init__(self, path="./config/"):
         self.config = "None"
         self.path=path
+        self.module=MODULES[0]
         self.has_changed = False
 
-    def create_config(self, name, overwrite=True, module_type=""):
+    def create_config(self, name, overwrite=True, module_type=MODULES[0]):
         # Create config file
         directory = os.path.dirname(self.path)
         if directory and not os.path.exists(directory):
@@ -21,9 +22,10 @@ class ConfigHandler():
             option = 'x'
 
         with open(os.path.join(self.path, name) , option) as f:
-            pass  # Do nothing, just close it immediately (for now)
+            f.write(module_type)
 
         self.config = name
+        self.module = module_type
 
     def set_config(self, name):
         self.config = name
@@ -31,6 +33,9 @@ class ConfigHandler():
 
     def get_config(self):
         return self.config
+
+    def get_module_type(self):
+        return self.module
 
     def get_path(self):
         return self.path
@@ -47,6 +52,10 @@ class ConfigHandler():
 
     def open_config(self, path):
         print(f"Opening configuration at {path}")
+        option = 'r'
+        with open(path , option) as f:
+            self.module = f.readline()
+
 
 if __name__ == "__main__":
     conf = ConfigHandler()

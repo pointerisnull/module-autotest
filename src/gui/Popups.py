@@ -65,18 +65,18 @@ class PopupManager:
     
     # Open module configuration file
     def open_config(self, parent, config_handler):
-        # 1. Create the Dialog
+        # Create the Dialog
         dialog = QDialog(parent)
         dialog.setWindowTitle("Select Configuration")
         dialog.resize(400, 300) # Taller to show the listbox
 
-        # 2. Setup Layout and Widgets
+        # Setup Layout and Widgets
         layout = QVBoxLayout(dialog)
 
         label = QLabel("Select a configuration from the list:")
         layout.addWidget(label)
 
-        # The Listbox (QListWidget)
+        # The Listbox
         list_widget = QListWidget()
         configs = config_handler.list_configs()
         list_widget.addItems(configs)
@@ -88,18 +88,17 @@ class PopupManager:
         buttons.rejected.connect(dialog.reject)
         layout.addWidget(buttons)
 
-        # 3. Apply Styling
-        # This ensures the blue selection highlight works
+        # Apply Styling
         dialog.setStyleSheet(parent.styleSheet())
-
-        # Apply your title bar logic
         win.update_titlebar(dialog, self.dark_mode)
 
-        # 4. Show and Handle Result
+        # Show and Handle Result
         if dialog.exec_() == QDialog.Accepted:
             selected_item = list_widget.currentItem()
             if selected_item:
                 config_handler.has_changed = True
+                print(selected_item.text())
+                config_handler.set_config(selected_item.text())
                 return selected_item.text()
 
         return None 

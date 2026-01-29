@@ -123,7 +123,7 @@ class MainWindow(QMainWindow):
         self.left_panel_layout = QVBoxLayout()
 
         # Header
-        io_label = QLabel("IO Pins")
+        io_label = QLabel(f"{self.config.get_module_type()} Pins")
         self.left_panel_layout.addWidget(io_label)
 
         self.io_list = QListWidget()
@@ -158,15 +158,7 @@ class MainWindow(QMainWindow):
 
     # TEMP: 8DI/8DO IO configuration
     def populate_io(self):
-        for i in range(1, 9):
-            io_tab = DigitalIn(f"DI_{i}")
-            self.io_list.addItem(f"DI_{i}")
-            self.options_stack.addWidget(io_tab.get_contents())
-        for i in range(1, 9):
-            io_tab = DigitalOut(f"DO_{i}")
-            self.io_list.addItem(f"DO_{i}")
-            self.options_stack.addWidget(io_tab.get_contents())
-        
+        get_module_io(self.config.get_module_type(), self.io_list, self.options_stack)
 
     # Testing options for each IO Pin
     def display_options_page(self, index):
