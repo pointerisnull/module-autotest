@@ -22,26 +22,26 @@ CRIMSON_WINDOW_TITLE = "Crimson 3.2"
 class ProcessMonitor(metaclass=Singleton):
     def check_for_download_completion(target_instance_pid: int) -> None:
         target_process = psutil.Process(target_instance_pid)
-        logging.log(f'Beginning monitoring of target PID, {target_instance_pid}')
+        logging.info(f'Beginning monitoring of target PID, {target_instance_pid}')
         try:
             while target_process.is_running():
                 monitor = ProcessMonitor.__monitor_download(target_instance_pid, DOWNLOAD_WINDOW_TITLE)
                 # if monitored window closed naturally or was aborted, without encountering an error, then 1 is returned and monitoring will break
                 if monitor == 1:
-                    logging.log(f'The {DOWNLOAD_WINDOW_TITLE} window closed successfully')
+                    logging.info(f'The {DOWNLOAD_WINDOW_TITLE} window closed successfully')
                     break
                 # else if monitored window encountered an error, then -1 is returned and monitoring will break (process has ended)
                 elif monitor == -1:
-                    logging.log('An error was encountered during process monitoring...')
-                    logging.log('Could not verify download completion...')
+                    logging.error('An error was encountered during process monitoring...')
+                    logging.error('Could not verify download completion...')
                     break
 
         except Exception as e:
-                    logging.log(f'An error occurred while checking for download completion...{e}')
-                    logging.log('Beginning cleanup...')
+                    logging.error(f'An error occurred while checking for download completion...{e}')
+                    logging.error('Beginning cleanup...')
                     sys.exit()
         
-        logging.log(f'The "{target_process.name()}" process has ended...')
+        logging.info(f'The "{target_process.name()}" process has ended...')
         # give the system 1 second to terminate target process
         time.sleep(1)
 
@@ -73,16 +73,16 @@ class ProcessMonitor(metaclass=Singleton):
             if __instance_pids:
                 __instance_found = True
                 if is_initial_search:
-                    logging.log(f'Initial search identified {len(__instance_pids)} preexisting "{target_process}" instance(s)')
+                    logging.info(f'Initial search identified {len(__instance_pids)} preexisting "{target_process}" instance(s)')
             
             # if this is an initial search, if no target process instances were found, exit while loop
             elif is_initial_search:
-                logging.log(f'Initial search found no preexisting "{target_process}" instances')
+                logging.info(f'Initial search found no preexisting "{target_process}" instances')
                 break
                 
             else:
                 __attempts -= 1
-                logging.log(f'"{target_process}" instance not found -- continuing search..., {__attempts}/5 attempts remaining')
+                logging.info(f'"{target_process}" instance not found -- continuing search..., {__attempts}/5 attempts remaining')
                 # give the system some time to recognize new instances of target_process
                 time.sleep(0.5)
                 pass
@@ -112,7 +112,7 @@ class ProcessMonitor(metaclass=Singleton):
 
             if len(__new_instance_pids) == 1:
                 __target_instance_pid = __new_instance_pids[0]
-                logging.log(f'Identified PID of target "{target_process}" process, {__target_instance_pid}')
+                logging.info(f'Identified PID of target "{target_process}" process, {__target_instance_pid}')
                 __target_found = True
                 
                 return __target_instance_pid
@@ -120,13 +120,13 @@ class ProcessMonitor(metaclass=Singleton):
             # else if 0 new instances of target_process are found, then reattempt up to 5 times to find a new instance of target_process
             elif len(__new_instance_pids) == 0:
                 __attempts -= 1
-                logging.log(f'Unable to find new "{target_process}" instance -- continuing search..., {__attempts}/5 attempts remaining')
+                logging.info(f'Unable to find new "{target_process}" instance -- continuing search..., {__attempts}/5 attempts remaining')
                 time.sleep(constants.BACKOFF_BASE ** (DEFAULT_ATTEMPTS - __attempts))
                 continue
             
             else:
-                logging.log(f'Too many new "{target_process}" instances detected -- unabled to identify target process.')
-                logging.log('Beginning cleanup...')
+                logging.error(f'Too many new "{target_process}" instances detected -- unabled to identify target process.')
+                logging.error('Beginning cleanup...')
                 sys.exit()
 
     def __find_new_instances(target_process: str, initial_instance_pids: list[int]) -> list[int]:
@@ -146,7 +146,7 @@ class ProcessMonitor(metaclass=Singleton):
         __new_instance_pids = []
         __attempts = DEFAULT_ATTEMPTS
         
-        logging.log(f'Searching for new instances of "{target_process}"...')
+        logging.info(f'Searching for new instances of "{target_process}"...')
         while not __new_instance_pids and __attempts > 0:
             # give the system 1 second for new instances of target_process to appear before checking
             time.sleep(1)
@@ -177,7 +177,7 @@ class ProcessMonitor(metaclass=Singleton):
             # if target "Download Database" window cannot be identified
             if __target_window_handle == -1:
                 # if a "Download Database" window cannot be found at this point, then most likely an alternate window with title "Crimson 3.2" has appeared
-                logging.log(f'"{target_window_title}" window not found')
+                logging.error(f'"{target_window_title}" window not found')
                 ProcessMonitor.__handle_addr_discrepancy_window(CRIMSON_WINDOW_TITLE, target_process_pid)
                 __attempts -= 1
             
@@ -185,8 +185,8 @@ class ProcessMonitor(metaclass=Singleton):
                 return ProcessMonitor.__monitor_target_window(target_window_title, __target_window_handle, target_process_pid)
             
         else:
-            logging.log(f'Unable to identify target "{target_window_title}"...')
-            logging.log('Beginning cleanup...')
+            logging.error(f'Unable to identify target "{target_window_title}"...')
+            logging.error('Beginning cleanup...')
             sys.exit()
 
     def __find_target_window_handle(target_process_id: int, target_window_title: str, initial_target_windows: list) -> int:
@@ -221,7 +221,7 @@ class ProcessMonitor(metaclass=Singleton):
                     __attempts = ProcessMonitor.__increment_find_window_attempts(target_window_title, __attempts)
                 
                 else:
-                    logging.log(f'Found "{target_window_title}" window associated with target PID, {target_process_id}' )
+                    logging.info(f'Found "{target_window_title}" window associated with target PID, {target_process_id}' )
                     return __matching_window_handle
                 
             # no new windows found, use `time.sleep` backoff and increment attempts
@@ -262,9 +262,9 @@ class ProcessMonitor(metaclass=Singleton):
         - *attempts* -- `int`
             - Number of attempts
         '''
-        logging.log(f'Unable to identify target "{target_window_title}" window...')
+        logging.error(f'Unable to identify target "{target_window_title}" window...')
         attempts += 1
-        logging.log(f'Continuing search for target window, {attempts}/5 attempts...')
+        logging.info(f'Continuing search for target window, {attempts}/5 attempts...')
         time.sleep(constants.BACKOFF_BASE)
         
         return attempts
@@ -284,18 +284,18 @@ class ProcessMonitor(metaclass=Singleton):
             __button_window_handle = button_window._hWnd
             __button_window_associated_pid = win32process.GetWindowThreadProcessId(__button_window_handle)[1]
             if __button_window_associated_pid == target_process_id:
-                logging.log(f'Found alternate "{button_window.title}" window associated with target PID, {__button_window_associated_pid}')
+                logging.info(f'Found alternate "{button_window.title}" window associated with target PID, {__button_window_associated_pid}')
                 # Search for the three expected buttons
                 yes_handle = win32gui.FindWindowEx(__button_window_handle, None, 'Button', '&Yes')
                 no_handle = win32gui.FindWindowEx(__button_window_handle, None, 'Button', '&No')
                 cancel_handle = win32gui.FindWindowEx(__button_window_handle, None, 'Button', 'Cancel')
                 if not (yes_handle and no_handle and cancel_handle):
-                    logging.log('One or more expected buttons not found in the discrepancy window')
-                    logging.log('Beginning cleanup...')
+                    logging.info('One or more expected buttons not found in the discrepancy window')
+                    logging.info('Beginning cleanup...')
                     sys.exit()
-                logging.log('Crimson has detected a discrepancy between the currently selected download address configured in the database and the last known download address')
+                logging.info('Crimson has detected a discrepancy between the currently selected download address configured in the database and the last known download address')
                 win32api.SendMessage(yes_handle, win32con.BM_CLICK, 0, 0) #If the address discrepancy window is not in the foreground when this is called, the test will fail. 
-                logging.log('Accepting download address override...')
+                logging.info('Accepting download address override...')
                 time.sleep(1)
                 break
                 
@@ -312,7 +312,7 @@ class ProcessMonitor(metaclass=Singleton):
             - Integer representing the target's pid
         '''
         # once target window has been identified, begin monitoring lifespan of window
-        logging.log('Monitoring for errors...')
+        logging.info('Monitoring for errors...')
         __start_time = TestTime.get_now()
         __open_window_handles = [window._hWnd for window in pygetwindow.getAllWindows()]
 
@@ -332,8 +332,8 @@ class ProcessMonitor(metaclass=Singleton):
             for child in children:
                 window_text = win32gui.GetWindowText(child)
                 if 'ERROR' in window_text:
-                    logging.log(f'Crimson error encountered during download, "{window_text}"')
-                    logging.log(f'Terminating target process, PID {target_process_id}')
+                    logging.error(f'Crimson error encountered during download, "{window_text}"')
+                    logging.error(f'Terminating target process, PID {target_process_id}')
                     subprocess.run(["C:\\Windows\\system32\\taskkill.exe",
                                     '/F',
                                     '/PID',
@@ -341,12 +341,12 @@ class ProcessMonitor(metaclass=Singleton):
                     return -1
         
         # reached if target window closes without encountering an error
-        logging.log(f'Target "{target_window_title}" window has been closed...')
+        logging.error(f'Target "{target_window_title}" window has been closed...')
     
         # write timestamp to log without console output -> override default "info" text coloring for timestamp
-        logging.log(f'Download completed in, {TestTime.get_timediff(__start_time)}', print_to_console=False)
+        logging.info(f'Download completed in, {TestTime.get_timediff(__start_time)}', print_to_console=False)
         # repeat timestamp to console only with ANSI coloring - cyan
-        logging.log(f'Download completed in, \033[0;36m{TestTime.get_timediff(__start_time)}\033[0m', write_to_log=False)
+        logging.info(f'Download completed in, \033[0;36m{TestTime.get_timediff(__start_time)}\033[0m', write_to_log=False)
         
         return 1
     

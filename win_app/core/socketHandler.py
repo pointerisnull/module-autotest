@@ -29,7 +29,7 @@ class SocketHandler:
             time.sleep(2)
             try:
                 self.__socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                self.__socket.settimeout(constants.BACKOFF_BASE ** __TIMEOUT)
+                self.__socket.settimeout(2 ** __TIMEOUT)
                 self.__socket.connect((self.__remote_host_address, self.__debug_port))
                 break
             

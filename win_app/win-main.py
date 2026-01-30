@@ -5,7 +5,9 @@ import sys
 import objects
 import logging
 
-from objects import Database, Tag, Device
+from objects.Database import Database
+from objects.Device import Device
+from objects.Tag import Tag
 from objects.connections import TCPConnection
 import common.constants as constants
 from core.Downloader import Downloader
@@ -17,7 +19,7 @@ def main():
         connection = TCPConnection('eth0', 'joe-z-flex', '10.80.14.125')
         Tag1 = Tag('Tag1', 1)
         list = [Tag1]
-        test = Database('C:\\Users\\joe.zink\\OneDrive - HMS Industrial Networks\\Desktop\\module-autotest\\win_app\\databases\\AO8.cd32', 789, list)
+        test = Database('C:\\Users\\joe.zink\\OneDrive - HMS Industrial Networks\\Desktop\\module-autotest\\win_app\\databases\\DB_TEST_TOOL.cd32', 789, list)
 
         Downloader()
         

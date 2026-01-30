@@ -26,7 +26,6 @@ class Downloader(metaclass=Singleton):
 
         try: 
             logging.info(f'Attempting download with database "{target_database.get_filename()}" via "{__target_connection.get_type().upper()}" "{__target_connection.get_id()}", to "{target_device.get_device_id()}"')
-
             match type(__target_connection):
                 case objects.connections.TCPConnection:
                     command_args = [str(constants.CRIMSON_INSTALL),
@@ -38,11 +37,12 @@ class Downloader(metaclass=Singleton):
                                     constants.CRIMSON_USER,
                                     '-pass',
                                     constants.CRIMSON_PASS]
-                    
-                    Downloader.__run_c3(command_args, __monitored_process)
         
+                    Downloader.__run_c3(command_args, __monitored_process)
+                
+                    
         except Exception as e:
-            logging.error(f'Unexpected Exception encountered while attempting download of "{target_database.get_id()}" build via {__target_connection.get_type()} to device "{target_device.get_id()}", "{e}"')
+            logging.error(f'Unexpected Exception encountered while attempting download of build via {__target_connection.get_type()} to device {target_device.get_device_id()}, {e}')
             logging.error('Please verify that all config files are correct and that all physical connections to device are stable and try again')
             logging.info('Beginning cleanup...')
             sys.exit()
@@ -50,7 +50,7 @@ class Downloader(metaclass=Singleton):
     def __run_c3(command_args: list, monitored_process: str) -> None:
         try:
             __initial_instance_pids = ProcessMonitor.find_all_process_instances(monitored_process, is_initial_search=True)
-            subprocess.Popen(command_args)
+            subprocess.Popen(command_args) # bad command_args??
             # init search for "monitored process" PID, which is used to monitor the lifespan of the Crimson download on the target device
             __target_instance_pid = ProcessMonitor.find_target_instance_pid(monitored_process, __initial_instance_pids)
             ProcessMonitor.check_for_download_completion(__target_instance_pid)
@@ -69,6 +69,7 @@ class Downloader(metaclass=Singleton):
                 logging.info(f'Error encountered while attempting to terminate the target process, {e}')
                 pass
 
+    """
     def __check_ssh(device: Device) -> bool:
         '''
         This method checks if the target device is open to SSH communication by attempting to establish an SSH connection.
@@ -84,7 +85,7 @@ class Downloader(metaclass=Singleton):
         __ssh_user = device.get_os_settings().get_ssh_user()
         __password = device.get_os_settings().get_ssh_password()
         
-        logging.info(f'Polling device "{device.get_id()}" for open comms...')
+        logging.info(f'Polling device "{device.get_device_id()}" for open comms...')
         try:
             # Create an SSH client
             ssh = paramiko.SSHClient()
@@ -103,3 +104,4 @@ class Downloader(metaclass=Singleton):
             return False
             
         return True
+    """

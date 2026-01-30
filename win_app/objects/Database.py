@@ -12,10 +12,10 @@ class Database:
             self.__debug_port = debug_port
 
         except ValueError as ve:
-            logging.log(f'ValueError encountered during init of Database, {self.__filename}, {ve}')
+            logging.error(f'ValueError encountered during init of Database, {self.__filename}, {ve}')
         
         except Exception as e:
-            logging.log(f'Exception encountered during init of Database, {self.__filename}, {e}')
+            logging.error(f'Exception encountered during init of Database, {self.__filename}, {e}')
 
     def get_filepath(self) -> Path:
         return self.__filepath

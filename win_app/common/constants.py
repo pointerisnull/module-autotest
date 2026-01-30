@@ -1,7 +1,7 @@
 USER = "joe.zink"
 
 # Filepath for Crimson
-CRIMSON_INSTALL = "C:\\Program Files (x86)\\Red Lion Controls"
+CRIMSON_INSTALL = "C:\\Program Files (x86)\\Red Lion Controls\\Crimson 3.2"
 
 # Filepath for logs
 LOGS_PATH = "C:\\Users\\joe.zink\\OneDrive - HMS Industrial Networks\\Desktop\\Logs"

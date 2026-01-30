@@ -8,7 +8,7 @@ class Device:
         self.__configured_connections_list = configured_connections
 
     def get_device_id(self) -> str:
-        return self.__device_id()
+        return self.__device_id
     
     def get_configured_connections_list(self) -> list[TCPConnection]:
            

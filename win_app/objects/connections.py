@@ -43,16 +43,16 @@ class TCPConnection(Connection):
     def get_id(self) -> str:
         return self.__id    
     
-    def get_remote_host_address(self) -> str:            
+    def get_remote_host_address(self) -> str:     
         return self.__remote_host
 
     def _verify(self, remote_host: str) -> bool:
         __download_port = constants.DEFAULT_DOWNLOAD_PORT
         __socket_handler = SocketHandler(remote_host, __download_port)
         try:
-            __socket_handler.open_TCP_socket(max_attempts=5)
+            __socket_handler.open_socket(max_attempts=5)
             logging.info(f'Connection to host {remote_host} verified')
-            __socket_handler.close_TCP_socket()
+            __socket_handler.close_socket()
             return True
         
         except Exception as e:
